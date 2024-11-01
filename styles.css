@@ -1,0 +1,223 @@
+/* Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos globales */
+body, html {
+    font-family: Arial, sans-serif;
+    height: 100%;
+}
+
+/*Bienvenida */
+#container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url('fondo.jpg');
+    background-size: cover;
+    transition: opacity 0.5s ease;
+}
+
+#container.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Estilos para los logos y títulos en la pantalla de bienvenida */
+#logos {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 100px;
+    margin: 0 10px;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: white;
+    font-weight: normal;
+}
+
+h2 {
+    font-size: 24px;
+    color: white;
+    margin-bottom: 30px;
+    font-weight: normal;}
+
+#boton-container {
+    margin-top: 20px;
+}
+
+#boton {
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#boton:hover {
+    background-color: darkred;
+}
+
+/* Menú de Navegación Fijo */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #c00;
+    padding: 10px 20px;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+/* Estilo para el título en el menú */
+.menu-title {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    white-space: nowrap;
+    margin-right: 20px;
+}
+
+/* Estilos para los enlaces del menú */
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+    flex-grow: 1;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 12px;
+    transition: background 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: darkred;
+    border-radius: 5px;
+}
+
+
+.menu-coddi {
+    background-color: #d00; 
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 8px 20px; /* Ajusta el ancho del botón */
+    margin-left: 15px; /* Espacio a la izquierda */
+    border-radius: 5px 5px 0 0; /* Bordes redondeados en la parte superior */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* Alinearlo con el menú */
+}
+
+
+.menu-coddi::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 10px solid #d00; /* Color que coincide con el fondo */
+}
+
+/* Pág Principal */
+.main.hidden {
+    display: none;
+}
+
+.main {
+    display: block;
+}
+
+/* Secciones de desplazamiento en las páginas de contenido */
+section {
+    padding: 100px 20px;
+    min-height: 100vh;
+}
+
+/* Colores de fondo para cada sección del menpu  */
+#introduccion { 
+    background-color: white; 
+    color: darkred;
+}
+
+#introduccion h2 {
+    color: red; 
+    font-weight: bold;
+}
+
+#contenido { 
+    background-color: white;
+    color: darkred;
+}
+
+#contenido h2 {
+    color: red;
+    font-weight: bold;
+}
+
+#actividades { 
+    background-color: white;
+    color: darkred;
+}
+
+#actividades h2 {
+    color: red;
+    font-weight: bold;
+}
+
+#autoevaluacion { 
+    background-color: white;
+    color: darkred;
+}
+
+#autoevaluacion h2 {
+    color: red;
+    font-weight: bold;
+}
+
+#fuentes { 
+    background-color: white;
+    color: darkred;
+}
+
+#fuentes h2 {
+    color: red;
+    font-weight: bold;
+}

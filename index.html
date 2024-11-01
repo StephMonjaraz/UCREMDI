@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pantalla de Bienvenida - Cálculo con Geometría Analítica</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- BIENVENIDA -->
+    <div id="container">
+        <div id="logos">
+            <img src="escudofi2.png" alt="Logotipo 1" class="logo">
+            <img src="escudounam2.png" alt="Logotipo 2" class="logo">   <!-- buscar otra imagen, se ve raro -->
+        </div>
+        
+        <h1>Cálculo con Geometría Analítica</h1>
+        <h2>Recursos Didácticos Digitales</h2>
+        
+        <div id="boton-container">
+            <!-- Envia a la introduccion (introduccion.html) -->
+            <button id="boton">Acceder</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("boton").addEventListener("click", function() {
+            // Redirige a pag de intro
+            window.location.href = "introduccion.html";
+        });
+    </script>
+</body>
+</html>
+
+
+
