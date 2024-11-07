@@ -38,9 +38,36 @@
 
     <!-- Contenido de la página -->
     <main>
-        <section id="autoevaluacion">
+        <section id="contenedor-seccion">
             <h2>Autoevaluación</h2>
-            <p>Esta es la sección de autoevaluacion al curso de Ecuaciones Diferenciales...</p>
+            <h3>Partiendo de los ejercicios propuestos responde las siguientes preguntas:</h3>
+            <h2>Cuestionario</h2>
+
+            <form onsubmit="return validarRespuestas()">
+                <p>1.- Selecciona el enunciado que sea verdadero</p>
+                <label>
+                    <input type="radio" name="pregunta1" value="A">
+                    <p>a.	Solo dos de las ecuaciones diferenciales se resuelven por el método de variables separables, ya que tienen funciones trigonométricas seno y coseno</p>
+                </label><br>
+                <label>
+                    <input type="radio" name="pregunta1" value="B">
+                    <p>b.	La primera ecuación no es de variables separables, las otras dos sí.</p>
+                </label><br>
+                <label>
+                    <input type="radio" name="pregunta1" value="C">
+                    <p>c.	Las tres ecuaciones diferenciales se resuelven por el método de variables separables, ya que podemos proponer productos o cocientes de funciones que dependen de una sola variable.</p>
+                </label><br>
+                <label>
+                    <input type="radio" name="pregunta1" value="D">
+                    <p>d.	Solo la primera ecuación diferencial es de variables separables ya que las otras dos cuentan con una suma de funciones que no puede separarse.</p>
+                </label><br>
+        
+                <input id="boton" type="submit" value="Comprobar">
+                <br>
+            </form>
+        
+            <div id="resultado"></div>
+            <br>
         </section>
     </main>
 
@@ -52,6 +79,21 @@
                 link.classList.add('active');
             }
         });
+        // Validar Respuestas
+        function validarRespuestas() {
+            let respuestas = document.querySelectorAll('input[type="radio"]:checked');
+            let resultado = '';
+
+            // Respuesta correcta para la pregunta 1
+            if (document.querySelector('input[name="pregunta1"]:checked').value === 'C') {
+                resultado += 'Pregunta 1: Correcta!<br>';
+            } else {
+                resultado += 'Pregunta 1: Incorrecta.<br>';
+            }
+
+            document.getElementById('resultado').innerHTML = resultado;
+            return false;  // Para evitar el envío del formulario
+        }
     </script>
 </body>
 </html>
