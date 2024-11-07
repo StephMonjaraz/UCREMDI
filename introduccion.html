@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio - Ecuaciones Diferenciales</title>
+    <title>Introducción - Ecuaciones Diferenciales</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Estilos adicionales para el cuadro emergente */
         nav ul li .tooltip {
             display: none;
             position: absolute;
-            background-color: #c00; /* Color rojo */
+            background-color: #c00;
             color: white;
             padding: 5px 10px;
             border-radius: 5px;
@@ -27,10 +26,93 @@
         nav ul li {
             position: relative;
         }
+
+        .carousel-container {
+            display: flex;
+            justify-content: center;
+            perspective: 1000px;
+            padding: 20px 0;
+        }
+
+        .carousel-wrapper {
+            width: 18cm;
+            overflow: hidden;
+            position: relative;
+            background-color: #c00;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .carousel {
+            display: flex;
+            transition: transform 0.4s ease; /* Un poco más rápida */
+        }
+
+        .carousel-item {
+            flex: 0 0 100%;
+            max-width: 100%;
+            text-align: center;
+            padding: 20px;
+            color: white;
+            transform: translateZ(-30px);
+            font-family: Arial, sans-serif;
+        }
+
+        .carousel-item h3 {
+            color: #fff;
+            font-size: 1.6em;
+            font-weight: normal;
+        }
+
+        .carousel-item p {
+            color: #fff;
+            font-size: 1.1em;
+            font-weight: normal;
+        }
+
+        .carousel-item.intro {
+            background-color: #fff;
+            border: 1px solid #c00;
+            color: #c00;
+            border-radius: 8px;
+        }
+
+        .carousel-item.intro h3 {
+            color: #c00;
+        }
+
+        .carousel-item.intro p {
+            color: #333;
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            color: #c00;
+            user-select: none;
+            z-index: 10;
+        }
+
+        .carousel-button.left {
+            left: 10px;
+        }
+
+        .carousel-button.right {
+            right: 10px;
+        }
+
+        .carousel-wrapper:hover .carousel-button {
+            color: rgba(255, 255, 255, 0.2);
+        }
     </style>
 </head>
 <body>
-    <!-- Encabezado superior -->
     <div class="header-top">
         <div class="logo-section">
             <img src="Escudo-UNAM.png" alt="Logotipo de la UNAM">
@@ -46,7 +128,6 @@
         </div>
     </div>
 
-    <!-- Menú de navegación -->
     <nav>
         <ul>
             <li><a href="introduccion.html">Introducción</a></li>
@@ -62,9 +143,51 @@
         </ul>
     </nav>
 
-    <!-- Contenido de la página -->
+    <div class="carousel-container">
+        <div class="carousel-wrapper">
+            <button class="carousel-button left" onclick="moveCarousel(-1)">&#10094;</button>
+            <div class="carousel" id="carousel">
+                <!-- Duplicado de Referencias para el bucle -->
+                <div class="carousel-item">
+                    <h3>Referencias</h3>
+                    <p>Recursos y materiales de apoyo para el aprendizaje.</p>
+                </div>
+                <!-- Elementos principales -->
+                <div class="carousel-item intro">
+                    <h3>Introducción</h3>
+                    <p>Conoce la importancia de las ecuaciones diferenciales y su aplicación en ingeniería.</p>
+                </div>
+                <div class="carousel-item">
+                    <h3>Forma de este tipo de ecuaciones diferenciales</h3>
+                    <p>Descripción breve sobre las formas de ecuaciones diferenciales.</p>
+                </div>
+                <div class="carousel-item">
+                    <h3>Pasos a seguir</h3>
+                    <p>Instrucciones detalladas para resolver este tipo de ecuaciones.</p>
+                </div>
+                <div class="carousel-item">
+                    <h3>Actividades</h3>
+                    <p>Ejercicios resueltos y propuestos para practicar.</p>
+                </div>
+                <div class="carousel-item">
+                    <h3>Autoevaluación</h3>
+                    <p>Ejercicios interactivos para evaluar la comprensión.</p>
+                </div>
+                <div class="carousel-item">
+                    <h3>Referencias</h3>
+                    <p>Recursos y materiales de apoyo para el aprendizaje.</p>
+                </div>
+                <!-- Duplicado de Introducción para el bucle -->
+                <div class="carousel-item">
+                    <h3>Introducción</h3>
+                    <p>Conoce la importancia de las ecuaciones diferenciales y su aplicación en ingeniería.</p>
+                </div>
+            </div>
+            <button class="carousel-button right" onclick="moveCarousel(1)">&#10095;</button>
+        </div>
+    </div>
+
     <main>
-        <!-- Sección de información general -->
         <section id="informacion-general" style="padding: 20px; margin: 45px auto; max-width: 900px;">
             <h2 style="color: #c00; border-bottom: 2px solid #c00; padding-bottom: 5px;">Información General</h2>
             <p><strong style="color: #c00;">Asignatura:</strong> Ecuaciones Diferenciales (1325)</p>
@@ -72,46 +195,47 @@
             <p><strong style="color: #c00;">Dirigido a:</strong> Recurso diseñado para estudiantes de (3er) semestre</p>
             <p><strong style="color: #c00;">Autores:</strong> Evelyn Salazar Guerrero, Edgar Ali Ramos Gómez</p>
         </section>
-
-       <!-- Sección de Formas -->
-        <section id="inicio" style="padding: 20px; margin: 20px auto; max-width: 900px;">
-            <h2 style="color: #c00; border-bottom: 2px solid #c00; padding-bottom: 5px;">Forma de este tipo de ecuaciones diferenciales</h2>
-            <p style="text-align: justify;">El método de separación de variables es una técnica fundamental en el estudio de las ecuaciones diferenciales ordinarias. Este método se utiliza para resolver ecuaciones en las que las variables algebraicamente pueden separarse. Al reorganizar la ecuación diferencial de manera que cada variable y su diferencial correspondiente estén en lados opuestos, se pueden integrar ambos lados de forma independiente. Esto permite obtener una solución general para la ecuación diferencial, facilitando la comprensión y resolución de problemas en diversas áreas de la ciencia y la ingeniería.</p>
-        </section>
-
-        <!-- Sección de pasos -->
-        <section id="autoevaluacion" style="padding: 20px; margin: 20px auto; max-width: 900px;">
-            <h2 style="color: #c00; border-bottom: 2px solid #c00; padding-bottom: 5px;">Pasos a seguir para resolver este tipo de ecuaciones</h2>
-            <p>Pruebas y ejercicios interactivos para evaluar la comprensión del método de separación de variables.</p>
-        </section>
-
-        <!-- Sección de actividades -->
-        <section id="contenido" style="padding: 20px; margin: 20px auto; max-width: 900px;">
-            <h2 style="color: #c00; border-bottom: 2px solid #c00; padding-bottom: 5px;">Actividades</h2>
-            <p>Explicaciones detalladas y ejemplos de aplicación del método de separación de variables.</p>
-        </section>
-
-        <!-- Sección de autoevaluacion -->
-        <section id="actividades" style="padding: 20px; margin: 20px auto; max-width: 900px;">
-            <h2 style="color: #c00; border-bottom: 2px solid #c00; padding-bottom: 5px;">Autoevaluación</h2>
-            <p>Actividades prácticas para aplicar el conocimiento adquirido en la resolución de problemas.</p>
-        </section>
-
-        <!-- Sección de fuentes -->
-        <section id="fuentes" style="padding: 20px; margin: 20px auto; max-width: 900px;">
-            <h2 style="color: #c00; border-bottom: 2px solid #c00; padding-bottom: 5px;">Fuentes</h2>
-            <p>Referencias bibliográficas y materiales de apoyo utilizados para el desarrollo de los contenidos.</p>
-        </section>
     </main>
 
     <script>
-        // Detecta la página actual basándose en la URL
-        const links = document.querySelectorAll('nav ul li a');
-        links.forEach(link => {
-            if (link.href === window.location.href) {
-                link.classList.add('active');
-            }
-        });
+        let currentIndex = 1; // Inicia en el primer elemento real
+        const carousel = document.getElementById('carousel');
+        const totalItems = carousel.children.length;
+        let autoScroll;
+
+        // Posicionar al primer elemento real
+        carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+        function startAutoScroll() {
+            autoScroll = setInterval(() => moveCarousel(1), 2000); // Cambia cada 2 segundos
+        }
+
+        function moveCarousel(direction) {
+            clearInterval(autoScroll); // Detener desplazamiento automático al usar flechas
+
+            // Ajustar el índice
+            currentIndex += direction;
+            carousel.style.transition = 'transform 0.4s ease'; // Un poco más rápida
+            carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+            // Bucle continuo
+            carousel.addEventListener('transitionend', () => {
+                if (currentIndex === totalItems - 1) {
+                    carousel.style.transition = 'none';
+                    currentIndex = 1;
+                    carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+                } else if (currentIndex === 0) {
+                    carousel.style.transition = 'none';
+                    currentIndex = totalItems - 2;
+                    carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+                }
+                // Reiniciar auto-scroll después de usar las flechas
+                startAutoScroll();
+            }, { once: true });
+        }
+
+        // Iniciar el desplazamiento automático
+        startAutoScroll();
     </script>
 </body>
 </html>

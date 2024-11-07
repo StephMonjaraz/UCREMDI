@@ -4,6 +4,98 @@
     margin: 0; /* Elimina el margen por defecto */
     padding: 0; /* Elimina el padding por defecto */
 }
+/*Bienvenida */
+#container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url('fondo.jpg');
+    background-size: cover;
+    transition: opacity 0.5s ease;
+}
+
+/*Estilo de Tabla*/
+#tabla-info{
+    width: 100%;
+    max-width: 900px;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    padding-bottom: 1%;
+    padding-top: 3%;
+    margin: 45px auto;
+}
+th, td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #f2f2f2;
+}
+
+/*Estilo de Asignatura Recurso*/
+#asignatura-recurso{
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: white;
+}
+#boton{
+    background-color: #c00;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    }
+
+h2{
+    color: #c00; border-bottom: 3px solid #c00;
+    font-size: 200%;
+    padding: 10px; margin: 20px auto; max-width: 900px;
+}
+
+h3{
+    padding-top: 1%;
+}
+
+#resultado{
+    padding-top: 20px;
+}
+
+label{
+    padding: 20px;
+    padding-bottom: 1%;
+}
+
+#imagen{
+    width: 40%; /* Reduce el ancho a la mitad */
+    height: auto; /* Ajusta la altura proporcionalmente */
+    padding-top: 1%;
+}
+
+/* Estilos globales */
+#parrafo{
+    text-align: justify; padding-top: 1%; padding-bottom: 1%;
+}
+
+ol {
+    padding-left: 2%;
+    list-style-type: lower-alpha;
+    padding-bottom: 5%;
+}
+
+#contenedor-seccion{
+    padding: 10px; margin: 20px auto; max-width: 900px;
+}
 
 /* Estilos globales */
 body, html {
