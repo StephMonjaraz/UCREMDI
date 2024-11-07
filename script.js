@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const botonAcceder = document.getElementById("boton");
 
     // Si URL tiene #introduccion, se mite la pantalla de bienvenida
-    if (window.location.hash === "#introduccion") {
+    if (window.location.hash === "#inicio") {
         container.style.display = "none"; 
         mainPage.classList.remove("hidden"); // Muestra la página principal
     } else {
@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
         botonAcceder.addEventListener("click", function() {
             container.classList.add("hidden");
             mainPage.classList.remove("hidden");
-            window.location.hash = "#introduccion"; 
+            window.location.hash = "#inicio"; 
         });
     }
 });

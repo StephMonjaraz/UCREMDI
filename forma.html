@@ -3,8 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contenido - Ecuaciones Diferenciales</title>
+    <title>Inicio - Ecuaciones Diferenciales</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos adicionales para el cuadro emergente */
+        nav ul li .tooltip {
+            display: none;
+            position: absolute;
+            background-color: #c00; /* Color rojo */
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin-top: 5px;
+            white-space: nowrap;
+            z-index: 100;
+            font-size: 14px;
+        }
+
+        nav ul li:hover .tooltip {
+            display: block;
+        }
+
+        nav ul li {
+            position: relative;
+        }
+    </style>
 </head>
 <body>
     <!-- Encabezado superior -->
@@ -27,6 +50,10 @@
     <nav>
         <ul>
             <li><a href="introduccion.html">Introducción</a></li>
+            <li>
+                <a href="forma.html">Forma</a>
+                <div class="tooltip">Forma de este tipo de ecuaciones diferenciales</div>
+            </li>
             <li><a href="contenido.html">Contenido</a></li>
             <li><a href="actividades.html">Actividades</a></li>
             <li><a href="autoevaluacion.html">Autoevaluación</a></li>
@@ -37,10 +64,15 @@
 
     <!-- Contenido de la página -->
     <main>
-        <section id="contenido">
-            <h2>Contenido</h2>
-            <p>Esta es la sección de contendio al curso de Ecuaciones Diferenciales...</p>
+        <!-- Sección de información general -->
+        <section id="informacion-general" style="padding: 20px; margin: 45px auto; max-width: 900px;">
+            <h2 style="color: #c00; border-bottom: 2px solid #c00; padding-bottom: 5px;">Forma de este tipo de ecuaciones diferenciales</h2>
+            <p style="text-align: justify;">Este método se utiliza para ecuaciones diferenciales de primer orden, por lo que tendremos una primera derivada únicamente, en la cual podemos identificar un sólo cociente o producto de dos funciones igualadas a una derivada. 
+            
+                <p style="text-align: justify;">Se dice que una ecuación diferencial de variables separables es aquella que tiene la forma tal que podría reescribirse separando las variables “” y “” mediante el símbolo de igualdad, podríamos tener lo siguiente:</p>
+            
         </section>
+
     </main>
 
     <script>

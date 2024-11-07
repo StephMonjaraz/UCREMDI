@@ -3,22 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contenido</title>
+    <title>Autoevaluación - Ecuaciones Diferenciales</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-     <!-- Para que el menú se quede fijo en la pag actividades -->
-    <div id="menu-container"></div>
+    <!-- Encabezado superior -->
+    <div class="header-top">
+        <div class="logo-section">
+            <img src="Escudo-UNAM.png" alt="Logotipo de la UNAM">
+            <div class="unam-title-container">
+                <div class="unam-title">Universidad Nacional</div>
+                <div class="unam-subtitle">Autónoma de México</div>
+            </div>
+        </div>
+        <div class="faculty-title">
+            <div class="faculty-text">Facultad de</div>
+            <div class="ingenieria">Ingeniería</div>
+            <img src="EscudoFI-UNAM.png" alt="Logotipo de la Facultad de Ingeniería">
+        </div>
+    </div>
 
-<!-- "autoevaluacion" -->
-    <section id="autoevaluacion">
-        <h2>Autoevaluación</h2>
-        <p>Por favor, realice el siguiente cuetsionario...</p>
-
+    <!-- Menú de navegación -->
+    <nav>
+        <ul>
        
-    </section>
+            <li><a href="introduccion.html">Introducción</a></li>
+            <li><a href="contenido.html">Contenido</a></li>
+            <li><a href="actividades.html">Actividades</a></li>
+            <li><a href="autoevaluacion.html">Autoevaluación</a></li>
+            <li><a href="fuentes.html">Fuentes</a></li>
+            <div class="menu-coddi">CODDI</div>
+        </ul>
+    </nav>
 
-    <script src="menu.js"></script>
+    <!-- Contenido de la página -->
+    <main>
+        <section id="autoevaluacion">
+            <h2>Autoevaluación</h2>
+            <p>Esta es la sección de autoevaluacion al curso de Ecuaciones Diferenciales...</p>
+        </section>
+    </main>
+
+    <script>
+        // Detecta la página actual basándose en la URL
+        const links = document.querySelectorAll('nav ul li a');
+        links.forEach(link => {
+            if (link.href === window.location.href) {
+                link.classList.add('active');
+            }
+        });
+    </script>
 </body>
 </html>
 

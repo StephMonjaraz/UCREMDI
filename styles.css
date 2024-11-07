@@ -1,223 +1,162 @@
 /* Reset */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+    box-sizing: border-box; /* Asegura que el padding y el borde no afecten el tamaño total del elemento */
+    margin: 0; /* Elimina el margen por defecto */
+    padding: 0; /* Elimina el padding por defecto */
 }
 
 /* Estilos globales */
 body, html {
-    font-family: Arial, sans-serif;
-    height: 100%;
+    font-family: Arial, sans-serif; /* Define la fuente global */
+    height: 100%; /* Asegura que el cuerpo y el html ocupen el 100% de la altura */
 }
 
-/*Bienvenida */
-#container {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-image: url('fondo.jpg');
-    background-size: cover;
-    transition: opacity 0.5s ease;
+/* Encabezado superior */
+.header-top {
+    background-color: #e5e5e5; /* Fondo gris claro */
+    display: flex; /* Muestra elementos en línea */
+    align-items: center; /* Centra elementos verticalmente */
+    justify-content: space-between; /* Espacio distribuido uniformemente */
+    padding: 15px 40px; /* Espacio interno */
+    border-bottom: 2px solid #c00; /* Línea roja debajo */
 }
 
-#container.hidden {
-    opacity: 0;
-    pointer-events: none;
+.header-top .logo-section {
+    display: flex; /* Muestra el logo y el texto en línea */
+    align-items: center; /* Centra elementos verticalmente */
+    margin-left: 3cm; /* Espacio desde la izquierda */
+    gap: 20px; /* Espacio entre el logo y el texto */
 }
 
-/* Estilos para los logos y títulos en la pantalla de bienvenida */
-#logos {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
+.header-top .logo-section img {
+    height: 70px; /* Tamaño del logo */
 }
 
-.logo {
-    width: 100px;
-    margin: 0 10px;
+.header-top .unam-title-container {
+    display: flex; /* Muestra el título y subtítulo en línea */
+    flex-direction: column; /* Apila el título y subtítulo verticalmente */
+    margin-left: 0; /* Sin margen entre el logo y el texto */
 }
 
-h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
-    color: white;
-    font-weight: normal;
+.header-top .unam-title,
+.header-top .unam-subtitle {
+    font-size: 18px; /* Tamaño del texto */
+    color: #333; /* Color gris oscuro */
+    font-weight: bold; /* Texto en negrita */
 }
 
-h2 {
-    font-size: 24px;
-    color: white;
-    margin-bottom: 30px;
-    font-weight: normal;}
-
-#boton-container {
-    margin-top: 20px;
+/* Facultad de Ingeniería */
+.header-top .faculty-title {
+    display: flex; /* Muestra elementos en línea */
+    align-items: center; /* Centra elementos verticalmente */
+    margin-right: 3cm; /* Espacio desde la derecha */
+    gap: 10px; /* Espacio entre "Facultad de" e "Ingeniería" */
 }
 
-#boton {
-    background-color: red;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
+.faculty-title .faculty-text {
+    font-size: 18px; /* Tamaño de la fuente */
+    color: #c00; /* Texto rojo */
+    font-weight: bold; /* Texto en negrita */
 }
 
-#boton:hover {
-    background-color: darkred;
+.faculty-title .ingenieria {
+    font-size: 24px; /* Tamaño más grande para "Ingeniería" */
+    color: #c00; /* Texto rojo */
+    font-weight: bold; /* Texto en negrita */
 }
 
-/* Menú de Navegación Fijo */
+.faculty-title img {
+    height: 70px; /* Tamaño del logo */
+}
+
+/* Menú de navegación */
 nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: #c00;
-    padding: 10px 20px;
-    z-index: 1000;
-    box-sizing: border-box;
+    background-color: #fff; /* Fondo blanco */
+    border-bottom: 2px solid #c00; /* Línea roja inferior */
+    padding: 10px 20px; /* Espaciado interno */
+    display: flex; /* Muestra elementos en línea */
+    justify-content: center; /* Centra el menú */
+    align-items: center; /* Centra elementos verticalmente */
 }
 
-/* Estilo para el título en el menú */
-.menu-title {
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    white-space: nowrap;
-    margin-right: 20px;
-}
-
-/* Estilos para los enlaces del menú */
 nav ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: flex-end;
-    gap: 15px;
-    margin: 0;
-    padding: 0;
-    flex-grow: 1;
-}
-
-nav ul li {
-    display: inline;
+    list-style-type: none; /* Elimina las viñetas de la lista */
+    display: flex; /* Muestra elementos en línea */
+    gap: 20px; /* Espacio entre elementos */
+    margin: 0; /* Sin margen exterior */
+    padding: 0; /* Sin padding interior */
 }
 
 nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    padding: 8px 12px;
-    transition: background 0.3s;
+    color: #c00; /* Texto rojo */
+    text-decoration: none; /* Elimina subrayado */
+    font-size: 16px; /* Tamaño del texto */
+    padding: 8px 12px; /* Espaciado interno */
+    display: block; /* Hace que el enlace ocupe todo el espacio del elemento */
+    transition: color 0.3s; /* Transición de color al pasar el mouse */
+    position: relative; /* Necesario para el pseudo-elemento */
+}
+
+/* Cambia el color de la opción activa */
+nav ul li a.active {
+    color: black; /* Color negro para la opción activa */
 }
 
 nav ul li a:hover {
-    background-color: darkred;
-    border-radius: 5px;
+    color: darkred; /* Color al pasar el mouse */
 }
 
-
-.menu-coddi {
-    background-color: #d00; 
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 8px 20px; /* Ajusta el ancho del botón */
-    margin-left: 15px; /* Espacio a la izquierda */
-    border-radius: 5px 5px 0 0; /* Bordes redondeados en la parte superior */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative; /* Alinearlo con el menú */
-}
-
-
-.menu-coddi::after {
-    content: "";
+/* Muestra el título completo al pasar el ratón (sin el atributo title) */
+nav ul li a.show-tooltip:hover::after {
+    content: attr(data-tooltip); /* Usa un atributo personalizado */
     position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 0;
-    border-left: 15px solid transparent;
-    border-right: 15px solid transparent;
-    border-top: 10px solid #d00; /* Color que coincide con el fondo */
+    top: 100%; /* Debajo del enlace */
+    left: 50%; /* Centra el cuadro */
+    transform: translateX(-50%); /* Ajuste para centrar */
+    background-color: rgba(204, 0, 0, 0.9); /* Fondo rojo con transparencia */
+    color: white; /* Color del texto */
+    padding: 5px 10px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    white-space: nowrap; /* Evita el salto de línea */
+    z-index: 10; /* Asegura que esté encima */
+    opacity: 0; /* Invisible por defecto */
+    transition: opacity 0.3s; /* Transición suave */
 }
 
-/* Pág Principal */
-.main.hidden {
-    display: none;
+nav ul li a.show-tooltip:hover::after {
+    opacity: 1; /* Visible al pasar el mouse */
 }
 
-.main {
-    display: block;
+
+/* Iconos del menú */
+.menu-icons img {
+    width: 20px; /* Tamaño del icono */
+    height: auto; /* Mantiene la proporción */
 }
 
-/* Secciones de desplazamiento en las páginas de contenido */
-section {
-    padding: 100px 20px;
-    min-height: 100vh;
+/* Estilos para la opción CODDI */
+.menu-coddi {
+    background-color: #c00; /* Color rojo */
+    color: white; /* Color del texto */
+    font-size: 16px; /* Tamaño del texto */
+    padding: 10px; /* Espaciado interno */
+    text-align: center; /* Centra el texto */
+    font-weight: bold; /* Negritas */
+    width: 100%; /* Ocupa todo el ancho del menú */
+    position: relative; /* Posiciona de forma relativa */
+    top: -10px; /* Ajusta para que sobresalga del menú */
+    z-index: 1; /* Asegura que esté encima del menú */
+    border-radius: 0 0 5px 5px; /* Bordes inferiores redondeados */
 }
 
-/* Colores de fondo para cada sección del menpu  */
-#introduccion { 
-    background-color: white; 
-    color: darkred;
+/* Sombra opcional para la opción CODDI */
+.menu-coddi {
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
-#introduccion h2 {
-    color: red; 
-    font-weight: bold;
-}
-
-#contenido { 
-    background-color: white;
-    color: darkred;
-}
-
-#contenido h2 {
-    color: red;
-    font-weight: bold;
-}
-
-#actividades { 
-    background-color: white;
-    color: darkred;
-}
-
-#actividades h2 {
-    color: red;
-    font-weight: bold;
-}
-
-#autoevaluacion { 
-    background-color: white;
-    color: darkred;
-}
-
-#autoevaluacion h2 {
-    color: red;
-    font-weight: bold;
-}
-
-#fuentes { 
-    background-color: white;
-    color: darkred;
-}
-
-#fuentes h2 {
-    color: red;
-    font-weight: bold;
+/* Ajuste para el contenido para que no quede debajo del header */
+main {
+    margin-top: -1cm; /* Espacio superior reducido */
+    margin-left: 30px; /* Espacio de 2 cm desde la izquierda */
+    margin-right: 30px; /* Opcional: Espacio de 2 cm desde la derecha */
 }
