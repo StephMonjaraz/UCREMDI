@@ -3,43 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contenido - Ecuaciones Diferenciales</title>
+    <title>Forma - Ecuaciones Diferenciales</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Tooltip submenu emergente */
+        nav ul li .tooltip {
+            display: none;
+            position: absolute;
+            background-color: #c00; /* Fondo rojo */
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin-top: 5px;
+            white-space: nowrap;
+            z-index: 100;
+            font-size: 14px;
+        }
+
+        nav ul li:hover .tooltip {
+            display: block; /* Mostrar al pasar el ratón */
+        }
+
+        nav ul li {
+            position: relative; /* Necesario para posicionar el tooltip */
+        }
+    </style>
 </head>
 <body>
-    <!-- Encabezado superior -->
+    <!-- Barra roja superior -->
     <div class="header-top">
-        <div class="logo-section">
-            <img src="Escudo-UNAM.png" alt="Logotipo de la UNAM">
-            <div class="unam-title-container">
-                <div class="unam-title">Universidad Nacional</div>
-                <div class="unam-subtitle">Autónoma de México</div>
-            </div>
-        </div>
-        <div class="faculty-title">
-            <div class="faculty-text">Facultad de</div>
-            <div class="ingenieria">Ingeniería</div>
-            <img src="EscudoFI-UNAM.png" alt="Logotipo de la Facultad de Ingeniería">
-        </div>
+        <div class="logo-section">CODDIS</div>
+        <div class="search-button">Búsqueda</div>
     </div>
 
     <!-- Menú de navegación -->
     <nav>
         <ul>
             <li><a href="introduccion.html">Introducción</a></li>
+            <li>
+                <a href="forma.html">Forma</a>
+                <!-- Tooltip para mostrar el texto emergente -->
+                <div class="tooltip">Forma de este tipo de ecuaciones diferenciales</div>
+            </li>
             <li><a href="contenido.html">Contenido</a></li>
             <li><a href="actividades.html">Actividades</a></li>
             <li><a href="autoevaluacion.html">Autoevaluación</a></li>
             <li><a href="fuentes.html">Fuentes</a></li>
-            <div class="menu-coddi">CODDI</div>
         </ul>
     </nav>
 
     <!-- Contenido de la página -->
     <main>
-        <section id="contenido">
-            <h2>Contenido</h2>
-            <p>Esta es la sección de contendio al curso de Ecuaciones Diferenciales...</p>
+        <section id="formas">
+            <h2>Forma de este tipo de ecuaciones diferenciales</h2>
+            <p>
+                Una ecuación diferencial de variables separables es aquella que puede reescribirse separando las variables 
+                “x” y “y” mediante el símbolo de igualdad, logrando una forma como la siguiente:
+            </p>
+
+            <figure style="text-align: center;">
+                <img id="imagen" src="derivada.jpg" alt="Ecuación diferencial">
+                <figcaption>Ejemplo de una ecuación diferencial de variables separables.</figcaption>
+            </figure>
+
+            <p>
+                La primera derivada, en este caso, está igualada a un producto o cociente de funciones, 
+                donde cada función depende únicamente de una variable. En el producto, la función \( f(x) \) depende 
+                únicamente de \( x \), mientras que \( g(y) \) depende únicamente de \( y \). 
+            </p>
+
+            <h3>Pasos a seguir para resolver ecuaciones diferenciales de esta forma:</h3>
+            <ol>
+                <li>Verificar que la ecuación pueda separarse en términos de variables independientes.</li>
+                <li>Separar las variables \( x \) y \( y \), de modo que cada una se asocie con su diferencial correspondiente.</li>
+                <li>Integrar cada lado de la ecuación y añadir la constante de integración \( C \).</li>
+            </ol>
         </section>
     </main>
 

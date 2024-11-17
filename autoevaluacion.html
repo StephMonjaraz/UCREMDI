@@ -3,36 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Autoevaluación - Ecuaciones Diferenciales</title>
+    <title>Contenido - Ecuaciones Diferenciales</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Tooltip para el submenu emergente */
+        nav ul li .tooltip {
+            display: none;
+            position: absolute;
+            background-color:  #c00; /* Fondo semitransparente */
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin-top: 5px;
+            white-space: nowrap;
+            z-index: 100;
+            font-size: 14px;
+        }
+
+        nav ul li:hover .tooltip {
+            display: block; /* Se muestra al pasar el ratón */
+        }
+
+        nav ul li {
+            position: relative; /* Necesario para posicionar el tooltip */
+        }
+    </style>
 </head>
 <body>
-    <!-- Encabezado superior -->
+    <!-- Barra roja superior -->
     <div class="header-top">
-        <div class="logo-section">
-            <img src="Escudo-UNAM.png" alt="Logotipo de la UNAM">
-            <div class="unam-title-container">
-                <div class="unam-title">Universidad Nacional</div>
-                <div class="unam-subtitle">Autónoma de México</div>
-            </div>
-        </div>
-        <div class="faculty-title">
-            <div class="faculty-text">Facultad de</div>
-            <div class="ingenieria">Ingeniería</div>
-            <img src="EscudoFI-UNAM.png" alt="Logotipo de la Facultad de Ingeniería">
-        </div>
+        <div class="logo-section">CODDIS</div>
+        <div class="search-button">Búsqueda</div>
     </div>
 
     <!-- Menú de navegación -->
     <nav>
         <ul>
-       
             <li><a href="introduccion.html">Introducción</a></li>
             <li><a href="contenido.html">Contenido</a></li>
             <li><a href="actividades.html">Actividades</a></li>
             <li><a href="autoevaluacion.html">Autoevaluación</a></li>
             <li><a href="fuentes.html">Fuentes</a></li>
-            <div class="menu-coddi">CODDI</div>
         </ul>
     </nav>
 

@@ -1,11 +1,24 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
+<head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Introducción - Ecuaciones Diferenciales</title>
     <link rel="stylesheet" href="styles.css">
     <style>
+
+
+        /* 3era entrega, se agrega una foto a la introduccion*/
+        .header-image {
+            width: 100%; /* Pantalla (ancho de la iamgen) */
+            height: 130px; 
+            object-fit: cover; 
+            margin: 0; 
+            padding: 0; 
+            border: none; 
+            display: block; /* para quitar esoacios */
+        }
+
         nav ul li .tooltip {
             display: none;
             position: absolute;
@@ -45,7 +58,7 @@
 
         .carousel {
             display: flex;
-            transition: transform 0.4s ease; /* Un poco más rápida */
+            transition: transform 0.4s ease; /* veloci del carrusel */
         }
 
         .carousel-item {
@@ -112,34 +125,25 @@
         }
     </style>
 </head>
-<body>
-    <div class="header-top">
-        <div class="logo-section">
-            <img src="Escudo-UNAM.png" alt="Logotipo de la UNAM">
-            <div class="unam-title-container">
-                <div class="unam-title">Universidad Nacional</div>
-                <div class="unam-subtitle">Autónoma de México</div>
-            </div>
-        </div>
-        <div class="faculty-title">
-            <div class="faculty-text">Facultad de</div>
-            <div class="ingenieria">Ingeniería</div>
-            <img src="EscudoFI-UNAM.png" alt="Logotipo de la Facultad de Ingeniería">
-        </div>
-    </div>
 
+<body>
+    <!-- Imagen representativa de ecuacoes -->
+    <img src="ecuaciones.jpg" alt="Ecuaciones Diferenciales" class="header-image">
+
+    <!-- Barra de CODDIS y boton busqueda -->
+    <div class="header-top">
+        <div class="logo-section">CODDIS</div> 
+        <div class="search-button">Búsqueda</div> 
+    </div>
+    
+    <!-- Menú de navegación -->
     <nav>
         <ul>
             <li><a href="introduccion.html">Introducción</a></li>
-            <li>
-                <a href="forma.html">Forma</a>
-                <div class="tooltip">Forma de este tipo de ecuaciones diferenciales</div>
-            </li>
             <li><a href="contenido.html">Contenido</a></li>
             <li><a href="actividades.html">Actividades</a></li>
             <li><a href="autoevaluacion.html">Autoevaluación</a></li>
             <li><a href="fuentes.html">Fuentes</a></li>
-            <div class="menu-coddi">CODDI</div>
         </ul>
     </nav>
 
@@ -147,12 +151,11 @@
         <div class="carousel-wrapper">
             <button class="carousel-button left" onclick="moveCarousel(-1)">&#10094;</button>
             <div class="carousel" id="carousel">
-                <!-- Duplicado de Referencias para el bucle -->
                 <div class="carousel-item">
                     <h3>Referencias</h3>
                     <p>Recursos y materiales de apoyo para el aprendizaje.</p>
                 </div>
-                <!-- Elementos principales -->
+                <!-- Elementos del carrusel (los que corresponden al menu) -->
                 <div class="carousel-item intro">
                     <h3>Introducción</h3>
                     <p>Conoce la importancia de las ecuaciones diferenciales y su aplicación en ingeniería.</p>
@@ -177,7 +180,6 @@
                     <h3>Referencias</h3>
                     <p>Recursos y materiales de apoyo para el aprendizaje.</p>
                 </div>
-                <!-- Duplicado de Introducción para el bucle -->
                 <div class="carousel-item">
                     <h3>Introducción</h3>
                     <p>Conoce la importancia de las ecuaciones diferenciales y su aplicación en ingeniería.</p>
@@ -186,7 +188,7 @@
             <button class="carousel-button right" onclick="moveCarousel(1)">&#10095;</button>
         </div>
     </div>
-
+<!-- INFO DE LA PAGINA -->
     <main>
         <section id="informacion-general" style="padding: 20px; margin: 45px auto; max-width: 900px;">
             <h2 style="color: #c00; border-bottom: 2px solid #c00; padding-bottom: 5px;">Información General</h2>
@@ -198,27 +200,25 @@
     </main>
 
     <script>
-        let currentIndex = 1; // Inicia en el primer elemento real
+        let currentIndex = 1; 
         const carousel = document.getElementById('carousel');
         const totalItems = carousel.children.length;
         let autoScroll;
 
-        // Posicionar al primer elemento real
         carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
 
         function startAutoScroll() {
-            autoScroll = setInterval(() => moveCarousel(1), 2000); // Cambia cada 2 segundos
+            autoScroll = setInterval(() => moveCarousel(1), 2000); // Tiempo cambio del carrusel
         }
 
         function moveCarousel(direction) {
-            clearInterval(autoScroll); // Detener desplazamiento automático al usar flechas
+            clearInterval(autoScroll); 
 
-            // Ajustar el índice
             currentIndex += direction;
-            carousel.style.transition = 'transform 0.4s ease'; // Un poco más rápida
+            carousel.style.transition = 'transform 0.4s ease'; 
             carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
 
-            // Bucle continuo
+            // Bucle continuo del carrusel
             carousel.addEventListener('transitionend', () => {
                 if (currentIndex === totalItems - 1) {
                     carousel.style.transition = 'none';
@@ -229,12 +229,11 @@
                     currentIndex = totalItems - 2;
                     carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
                 }
-                // Reiniciar auto-scroll después de usar las flechas
                 startAutoScroll();
             }, { once: true });
         }
 
-        // Iniciar el desplazamiento automático
+        // Desp automático
         startAutoScroll();
     </script>
 </body>

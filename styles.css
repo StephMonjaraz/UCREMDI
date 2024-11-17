@@ -1,254 +1,103 @@
+/* Importar la fuente Montserrat */
+@font-face {
+    font-family: 'Montserrat'; /* Prueba 3, nueva fuente */
+    src: url('./fonts/Montserrat-VariableFont_wght.ttf') format('truetype'); /* Ruta de la fuente descargada */
+    font-weight: 100 900; 
+    font-style: normal; 
+}
+
 /* Reset */
 * {
-    box-sizing: border-box; /* Asegura que el padding y el borde no afecten el tamaño total del elemento */
-    margin: 0; /* Elimina el margen por defecto */
-    padding: 0; /* Elimina el padding por defecto */
-}
-/*Bienvenida */
-#container {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-image: url('fondo.jpg');
-    background-size: cover;
-    transition: opacity 0.5s ease;
-}
-
-/*Estilo de Tabla*/
-#tabla-info{
-    width: 100%;
-    max-width: 900px;
-    border-collapse: collapse;
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    padding-bottom: 1%;
-    padding-top: 3%;
-    margin: 45px auto;
-}
-th, td {
-    border: 1px solid #dddddd;
-    padding: 8px;
-    text-align: left;
-}
-th {
-    background-color: #f2f2f2;
-}
-
-/*Estilo de Asignatura Recurso*/
-#asignatura-recurso{
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    color: white;
-}
-#boton{
-    background-color: #c00;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    }
-
-h2{
-    color: #c00; border-bottom: 3px solid #c00;
-    font-size: 200%;
-    padding: 10px; margin: 20px auto; max-width: 900px;
-}
-
-h3{
-    padding-top: 1%;
-}
-
-#resultado{
-    padding-top: 20px;
-}
-
-label{
-    padding: 20px;
-    padding-bottom: 1%;
-}
-
-#imagen{
-    width: 40%; /* Reduce el ancho a la mitad */
-    height: auto; /* Ajusta la altura proporcionalmente */
-    padding-top: 1%;
-}
-
-/* Estilos globales */
-#parrafo{
-    text-align: justify; padding-top: 1%; padding-bottom: 1%;
-}
-
-ol {
-    padding-left: 2%;
-    list-style-type: lower-alpha;
-    padding-bottom: 5%;
-}
-
-#contenedor-seccion{
-    padding: 10px; margin: 20px auto; max-width: 900px;
-}
-
-/* Estilos globales */
-body, html {
-    font-family: Arial, sans-serif; /* Define la fuente global */
-    height: 100%; /* Asegura que el cuerpo y el html ocupen el 100% de la altura */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 /* Encabezado superior */
 .header-top {
-    background-color: #e5e5e5; /* Fondo gris claro */
-    display: flex; /* Muestra elementos en línea */
-    align-items: center; /* Centra elementos verticalmente */
-    justify-content: space-between; /* Espacio distribuido uniformemente */
-    padding: 15px 40px; /* Espacio interno */
-    border-bottom: 2px solid #c00; /* Línea roja debajo */
+    background-color: rgb(168, 20, 20); 
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    padding: 15px 40px;
+    border-bottom: 2px solid rgb(94, 14, 14);
+    font-family: 'Montserrat', Arial, sans-serif; 
+    position: relative; 
 }
 
-.header-top .logo-section {
-    display: flex; /* Muestra el logo y el texto en línea */
-    align-items: center; /* Centra elementos verticalmente */
-    margin-left: 3cm; /* Espacio desde la izquierda */
-    gap: 20px; /* Espacio entre el logo y el texto */
+/* CODDIS */
+.logo-section {
+    font-size: 40px;
+    color: white;
+    font-weight: normal; 
+    text-transform: uppercase; 
+    letter-spacing: 2px; 
 }
 
-.header-top .logo-section img {
-    height: 70px; /* Tamaño del logo */
+/* Botón de búsqueda */
+.search-button {
+    font-family: 'Montserrat', Arial, sans-serif; 
+    font-size: 14px; 
+    padding: 8px 20px; 
+    background-color: rgb(168, 20, 20); 
+    color: white; 
+    border: 1px solid orange; 
+    border-radius: 25px; 
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); 
+    cursor: pointer; 
+    text-transform: uppercase; 
+    position: absolute; 
+    right: 150px;
+    top: 50%; 
+    transform: translateY(-50%); 
 }
 
-.header-top .unam-title-container {
-    display: flex; /* Muestra el título y subtítulo en línea */
-    flex-direction: column; /* Apila el título y subtítulo verticalmente */
-    margin-left: 0; /* Sin margen entre el logo y el texto */
+.search-button:hover {
+    background-color: rgb(94, 14, 14); 
+    color: white;
+    transition: all 0.3s ease; 
 }
 
-.header-top .unam-title,
-.header-top .unam-subtitle {
-    font-size: 18px; /* Tamaño del texto */
-    color: #333; /* Color gris oscuro */
-    font-weight: bold; /* Texto en negrita */
-}
-
-/* Facultad de Ingeniería */
-.header-top .faculty-title {
-    display: flex; /* Muestra elementos en línea */
-    align-items: center; /* Centra elementos verticalmente */
-    margin-right: 3cm; /* Espacio desde la derecha */
-    gap: 10px; /* Espacio entre "Facultad de" e "Ingeniería" */
-}
-
-.faculty-title .faculty-text {
-    font-size: 18px; /* Tamaño de la fuente */
-    color: #c00; /* Texto rojo */
-    font-weight: bold; /* Texto en negrita */
-}
-
-.faculty-title .ingenieria {
-    font-size: 24px; /* Tamaño más grande para "Ingeniería" */
-    color: #c00; /* Texto rojo */
-    font-weight: bold; /* Texto en negrita */
-}
-
-.faculty-title img {
-    height: 70px; /* Tamaño del logo */
-}
-
-/* Menú de navegación */
-nav {
-    background-color: #fff; /* Fondo blanco */
-    border-bottom: 2px solid #c00; /* Línea roja inferior */
-    padding: 10px 20px; /* Espaciado interno */
-    display: flex; /* Muestra elementos en línea */
-    justify-content: center; /* Centra el menú */
-    align-items: center; /* Centra elementos verticalmente */
-}
-
+/* Menú de navegación  */
 nav ul {
-    list-style-type: none; /* Elimina las viñetas de la lista */
-    display: flex; /* Muestra elementos en línea */
-    gap: 20px; /* Espacio entre elementos */
-    margin: 0; /* Sin margen exterior */
-    padding: 0; /* Sin padding interior */
+    list-style-type: none; 
+    display: flex; 
+    justify-content: center; 
+    gap: 20px; 
+    background-color: rgb(94, 14, 14); 
+    margin: 0; 
+    padding: 10px 0; 
 }
 
 nav ul li a {
-    color: #c00; /* Texto rojo */
-    text-decoration: none; /* Elimina subrayado */
-    font-size: 16px; /* Tamaño del texto */
-    padding: 8px 12px; /* Espaciado interno */
-    display: block; /* Hace que el enlace ocupe todo el espacio del elemento */
-    transition: color 0.3s; /* Transición de color al pasar el mouse */
-    position: relative; /* Necesario para el pseudo-elemento */
-}
-
-/* Cambia el color de la opción activa */
-nav ul li a.active {
-    color: black; /* Color negro para la opción activa */
+    font-family: 'Montserrat', Arial, sans-serif; 
+    font-weight: 500; 
+    color: white; 
+    text-decoration: none; 
+    font-size: 16px; 
+    padding: 8px 12px; 
+    transition: color 0.3s, background-color 0.3s; 
 }
 
 nav ul li a:hover {
-    color: darkred; /* Color al pasar el mouse */
+    background-color: rgba(255, 255, 255, 0.2); 
+    color: white; 
 }
 
-/* Muestra el título completo al pasar el ratón (sin el atributo title) */
-nav ul li a.show-tooltip:hover::after {
-    content: attr(data-tooltip); /* Usa un atributo personalizado */
-    position: absolute;
-    top: 100%; /* Debajo del enlace */
-    left: 50%; /* Centra el cuadro */
-    transform: translateX(-50%); /* Ajuste para centrar */
-    background-color: rgba(204, 0, 0, 0.9); /* Fondo rojo con transparencia */
-    color: white; /* Color del texto */
-    padding: 5px 10px; /* Espaciado interno */
-    border-radius: 5px; /* Bordes redondeados */
-    white-space: nowrap; /* Evita el salto de línea */
-    z-index: 10; /* Asegura que esté encima */
-    opacity: 0; /* Invisible por defecto */
-    transition: opacity 0.3s; /* Transición suave */
-}
-
-nav ul li a.show-tooltip:hover::after {
-    opacity: 1; /* Visible al pasar el mouse */
-}
-
-
-/* Iconos del menú */
-.menu-icons img {
-    width: 20px; /* Tamaño del icono */
-    height: auto; /* Mantiene la proporción */
-}
-
-/* Estilos para la opción CODDI */
-.menu-coddi {
-    background-color: #c00; /* Color rojo */
-    color: white; /* Color del texto */
-    font-size: 16px; /* Tamaño del texto */
-    padding: 10px; /* Espaciado interno */
-    text-align: center; /* Centra el texto */
-    font-weight: bold; /* Negritas */
-    width: 100%; /* Ocupa todo el ancho del menú */
-    position: relative; /* Posiciona de forma relativa */
-    top: -10px; /* Ajusta para que sobresalga del menú */
-    z-index: 1; /* Asegura que esté encima del menú */
-    border-radius: 0 0 5px 5px; /* Bordes inferiores redondeados */
-}
-
-/* Sombra opcional para la opción CODDI */
-.menu-coddi {
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
-}
-
-/* Ajuste para el contenido para que no quede debajo del header */
 main {
-    margin-top: -1cm; /* Espacio superior reducido */
-    margin-left: 30px; /* Espacio de 2 cm desde la izquierda */
-    margin-right: 30px; /* Opcional: Espacio de 2 cm desde la derecha */
+    margin-top: 80px; 
+    text-align: center; 
+    padding: 20px;
+}
+
+main h1 {
+    font-size: 28px;
+    color: rgb(94, 14, 14); 
+    margin-bottom: 20px;
+}
+
+main p {
+    font-size: 16px;
+    color: #333; 
+    line-height: 1.6;
 }

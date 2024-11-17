@@ -6,7 +6,7 @@
     <title>Pantalla de Bienvenida - Cálculo con Geometría Analítica</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Estilos para centrar y ajustar el tamaño de los logotipos */
+        /* Estilos para logos */
         #container {
             display: flex;
             flex-direction: column;
@@ -14,24 +14,28 @@
             justify-content: center;
             text-align: center;
             min-height: 100vh;
-            gap: 30px; /* Espacio entre elementos */
+            gap: 30px; 
+            background-image: url('fondo.jpg'); /* Imagen de fond de la página */
+            background-size: cover; /* para cubrir toda la pantalla */
+            background-position: center; 
         }
 
         #logos {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 40px; /* Espacio entre los logotipos */
+            gap: 40px; 
         }
 
         .logo {
-            width: 200px; /* Ajusta el tamaño del logotipo */
-            height: auto; /* Mantiene la proporción */
+            width: 200px; 
+            height: auto; 
         }
 
         #asignatura-recurso h1 {
             font-size: 24px;
             margin: 5px 0;
+            color: white; 
         }
 
         #boton-container {
@@ -42,11 +46,20 @@
             padding: 10px 20px;
             font-size: 16px;
             cursor: pointer;
+            background-color: rgb(168, 20, 20); 
+            color: white; 
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); 
+        }
+
+        #boton:hover {
+            background-color: rgb(94, 14, 14); /* Color más oscuro al pasar el cursor */
         }
     </style>
 </head>
 <body>
-    <!-- BIENVENIDA -->
+    <!-- Pag de bienvenida -->
     <div id="container">
         <div id="logos">
             <img src="FIBlanco.png" alt="Logotipo 1" class="logo">
