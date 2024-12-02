@@ -19,7 +19,7 @@
     display: flex;
     align-items: center;
     justify-content: center; 
-    padding: 15px 40px;
+    padding: 15px 20px;
     border-bottom: 2px solid rgb(94, 14, 14);
     font-family: 'Montserrat', Arial, sans-serif; 
     position: relative; 
@@ -100,4 +100,16 @@ main p {
     font-size: 16px;
     color: #333; 
     line-height: 1.6;
+}
+
+#parrafo{
+    font-size: 14pt; /* Tamaño de fuente de 12 puntos */
+    text-align: start;
+    margin: 5%;
+
+}
+
+#contenedor-seccion{
+    margin: 2%;
+    text-align: start;
 }
