@@ -7,21 +7,28 @@
     <link rel="stylesheet" href="stylesPortal.css">
 </head>
 <body>
+<!-- Encabezado Principal -->
+<header class="header-index">
+    <!-- Contenedor de los Logos -->
+    <div class="logo-container">
+        <img src="Imagenes/EscudoFI-UNAM.png" alt="Logo FI">
+        <img src="Imagenes/FINegro.png" alt="Logo FI">
+        <img src="Imagenes/LogUCREMDI.png" alt="Logo FI">
+    </div>
+    <!-- Botón de Búsqueda -->
+    <button class="search-button">Búsqueda</button>
+</header>
 
-    <!-- Encabezado Principal -->
-    <header class="header-index">
-        <h1>Bienvenido al Curso</h1>
-        <p>Recursos educativos para estudiantes</p>
-    </header>
+
+    <!-- Se eliminó el Encabezado (Buenveida al curso)-->
 
     <!-- Barra de Navegación -->
     <nav>
         <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#contenidos">Contenidos</a></li>
-            <li><a href="#actividades">Actividades</a></li>
-            <li><a href="#autoevaluacion">Autoevaluación</a></li>
-            <li><a href="#referencias">Referencias</a></li>
+            <li><a href="#Inicio">Inicio</a></li>
+            <li><a href="#División">División</a></li>
+            <li><a href="#Asignatura">Asignatura</a></li>
+            <li><a href="#Temas">Temas</a></li>
         </ul>
     </nav>
 
@@ -33,57 +40,52 @@
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, dolor. Omnis praesentium dolore voluptatibus corporis ipsa itaque sit nihil sunt repellat. Est recusandae eaque quaerat accusantium. Dignissimos deleniti quis dolor! <br>
             </p>
         </section>
-        <h2>
-            Cursos
-        </h2>
+        <h2>Novedades</h2>
         <section>
             <div class="contenedor-recuadros">
-                <!-- COMENTARIO JESSI; El problema con las imagenes era que La raíz / indica el directorio base del servidor, pero como trabajamoscon GitHub Pages no muestra las imagenes-->
-                <!-- Debemos usar ./Imagenes/nombreimagen-->
                 <div class="recuadro">
-                    <a href="#"> <img class="img_recuadro" src="./Imagenes/curso1.jpg" alt=""></a>
+                    <a href="#"><img class="img_recuadro" src="./Imagenes/curso1.jpg" alt="Curso 1"></a>
                     <div>
                         <h3>Álgebra Lineal</h3>
                         <p>Contenido descriptivo para el recuadro 1.</p>
                     </div>
                 </div>
                 <div class="recuadro">
-                    <a href="#"> <img class="img_recuadro" src="./Imagenes/curso2.jpg" alt=""></a>
+                    <a href="#"><img class="img_recuadro" src="./Imagenes/curso2.jpg" alt="Curso 2"></a>
                     <h3>Álgebra</h3>
                     <p>Contenido descriptivo para el recuadro 2.</p>
                 </div>
                 <div class="recuadro">
-                          <!-- COMENTARIO JESSI: En esta parte, se redirige a la página Introducción. -->
                     <a href="introduccion.html">
-                        <img class="img_recuadro" src="./Imagenes/curso3.jpg" alt="">
+                        <img class="img_recuadro" src="./Imagenes/curso3.jpg" alt="Curso 3">
                         <h3>Ecuaciones Diferenciales</h3>
-                        <p>Contenido descriptivo para el recuadro 3.</p>
+                        <p>Método de separación de variables para resolver ecuaciones.</p>
                     </a>
                 </div>
                 <div class="recuadro">
-                    <a href="#"> <img class="img_recuadro" src="./Imagenes/curso4.jpg" alt=""></a>
+                    <a href="#"><img class="img_recuadro" src="./Imagenes/curso4.jpg" alt="Curso 4"></a>
                     <h3>Cálculo y Geometría Analítica</h3>
                     <p>Contenido descriptivo para el recuadro 4.</p>
                 </div>
             </div>
             <div class="contenedor-recuadros">
                 <div class="recuadro">
-                    <a href="#"> <img class="img_recuadro" src="./Imagenes/curso5.jpg" alt=""></a>
+                    <a href="#"><img class="img_recuadro" src="./Imagenes/curso5.jpg" alt="Curso 5"></a>
                     <h3>Cálculo Integral</h3>
                     <p>Contenido descriptivo para el recuadro 1.</p>
                 </div>
                 <div class="recuadro">
-                    <a href="#"> <img class="img_recuadro" src="./Imagenes/curso6.jpg" alt=""></a>
+                    <a href="#"><img class="img_recuadro" src="./Imagenes/curso6.jpg" alt="Curso 6"></a>
                     <h3>Química</h3>
                     <p>Contenido descriptivo para el recuadro 2.</p>
                 </div>
                 <div class="recuadro">
-                    <a href="#"> <img class="img_recuadro" src="./Imagenes/curso7.jpg" alt=""></a>
+                    <a href="#"><img class="img_recuadro" src="./Imagenes/curso7.jpg" alt="Curso 7"></a>
                     <h3>Mecánica</h3>
                     <p>Contenido descriptivo para el recuadro 3.</p>
                 </div>
                 <div class="recuadro">
-                    <a href="#"> <img class="img_recuadro" src="./Imagenes/curso8.jpg" alt=""></a>
+                    <a href="#"><img class="img_recuadro" src="./Imagenes/curso8.jpg" alt="Curso 8"></a>
                     <h3>Cálculo Vectorial</h3>
                     <p>Contenido descriptivo para el recuadro 4.</p>
                 </div>
@@ -91,11 +93,12 @@
         </section>
     </main>
 
+    <!-- Pie de Página -->
     <footer>
         <p>&copy; 2024 Universidad Nacional Autónoma de México</p>
     </footer>
-
 </body>
 </html>
+
 
 
