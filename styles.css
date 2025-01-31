@@ -1,115 +1,131 @@
-/* Importar la fuente Montserrat */
-@font-face {
-    font-family: 'Montserrat'; /* Prueba 3, nueva fuente */
-    src: url('./fonts/Montserrat-VariableFont_wght.ttf') format('truetype'); /* Ruta de la fuente descargada */
-    font-weight: 100 900; 
-    font-style: normal; 
-}
-
-/* Reset */
+/* Reset General */
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-/* Encabezado superior */
-.header-top {
-    background-color: rgb(168, 20, 20); 
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Contenedor del encabezado principal */
+.header-index {
+    display: flex;
+    align-items: center; /* Alinea los elementos verticalmente */
+    justify-content: space-between; /* Logos a la izquierda y botón a la derecha */
+    padding: 10px 20px;
+    background-color: #f2f2f2; /* Fondo claro del encabezado */
+}
+
+/* Contenedor de los logos */
+.logo-container {
     display: flex;
     align-items: center;
-    justify-content: center; 
-    padding: 15px 20px;
-    border-bottom: 2px solid rgb(94, 14, 14);
-    font-family: 'Montserrat', Arial, sans-serif; 
-    position: relative; 
 }
 
-/* CODDIS */
-.logo-section {
-    font-size: 40px;
-    color: white;
-    font-weight: normal; 
-    text-transform: uppercase; 
-    letter-spacing: 2px; 
+.logo-container img {
+    height: 30px; /* Tamaño pequeño para los logos */
+    width: auto; /* Mantiene la proporción del logo */
+    margin-right: 10px; /* Espaciado entre los logos */
 }
 
 /* Botón de búsqueda */
 .search-button {
-    font-family: 'Montserrat', Arial, sans-serif; 
+    font-family: Arial, sans-serif; 
     font-size: 14px; 
     padding: 8px 20px; 
-    background-color: rgb(168, 20, 20); 
+    background-color: #C8102E; 
     color: white; 
-    border: 1px solid orange; 
-    border-radius: 25px; 
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); 
+    border: none; 
+    border-radius: 5px; 
     cursor: pointer; 
     text-transform: uppercase; 
-    position: absolute; 
-    right: 150px;
-    top: 50%; 
-    transform: translateY(-50%); 
+    transition: background-color 0.3s ease;
 }
 
 .search-button:hover {
-    background-color: rgb(94, 14, 14); 
-    color: white;
-    transition: all 0.3s ease; 
+    background-color: #940000; 
 }
 
-/* Menú de navegación  */
+/* Barra de Navegación */
+nav {
+    background-color: #C8102E;
+    padding: 10px;
+}
+
 nav ul {
-    list-style-type: none; 
-    display: flex; 
-    justify-content: center; 
-    gap: 20px; 
-    background-color: rgb(94, 14, 14); 
-    margin: 0; 
-    padding: 10px 0; 
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
 }
 
 nav ul li a {
-    font-family: 'Montserrat', Arial, sans-serif; 
-    font-weight: 500; 
-    color: white; 
-    text-decoration: none; 
-    font-size: 16px; 
-    padding: 8px 12px; 
-    transition: color 0.3s, background-color 0.3s; 
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-nav ul li a:hover {
-    background-color: rgba(255, 255, 255, 0.2); 
-    color: white; 
+/* Encabezado Principal */
+header {
+    background-color: #f2f2f2;
+    text-align: center;
+    padding: 50px 0;
 }
 
+header h1 {
+    color: #C8102E;
+}
+
+h2 {
+    color: black;
+    text-align: center;
+}
+
+/* Contenido Principal */
 main {
-    margin-top: 80px; 
-    text-align: center; 
     padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-main h1 {
-    font-size: 28px;
-    color: rgb(94, 14, 14); 
+main section {
     margin-bottom: 20px;
 }
 
-main p {
-    font-size: 16px;
-    color: #333; 
-    line-height: 1.6;
+/* Pie de Página */
+footer {
+    background-color: #C8102E;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
 }
 
-#parrafo{
-    font-size: 14pt; /* Tamaño de fuente de 12 puntos */
-    text-align: start;
-    margin: 5%;
-
+/* Contenedor de Recuadros */
+.contenedor-recuadros {
+    display: inline-flex;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 10px;
+    padding: 10px;
 }
 
-#contenedor-seccion{
-    margin: 2%;
-    text-align: start;
+.recuadro {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.img_recuadro {
+    display: flexbox;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    width: 100%;
+    height: 120px;
 }

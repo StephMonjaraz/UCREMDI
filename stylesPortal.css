@@ -8,6 +8,54 @@ body {
     font-family: Arial, sans-serif;
 }
 
+/* Encabezado Principal */
+.header-index {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    padding: 10px 20px;
+    background-color: #f2f2f2; 
+    height: 90px; 
+}
+
+/* Contenedor de los logos */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 30px; 
+    margin-left: 40px; 
+}
+
+.logo-container img {
+    height: 70px; /* Tamaño de los logos */
+    width: auto; 
+}
+
+/* Botón de búsqueda */
+.search-button {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    padding: 10px 20px;
+    background-color: #f2f2f2;
+    color: #C8102E;
+    border: 2px solid #C8102E;
+    border-radius: 5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-align: center;
+    width: 120px; /* Ancho del botón */
+    height: 40px; 
+    transition: all 0.3s ease;
+    margin-right: 40px;
+   
+}
+
+.search-button:hover {
+    background-color: #C8102E;
+    color: white;
+}
+
+/* Barra de Navegación */
 nav {
     background-color: #C8102E;
     padding: 10px;
@@ -26,24 +74,23 @@ nav ul li {
 nav ul li a {
     color: white;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: normal; /* Texto */
+    font-size: 19px; 
+    transition: color 0.3s ease;
 }
 
-header {
-    background-color: #f2f2f2;
-    text-align: center;
-    padding: 50px 0;
+nav ul li a:hover {
+    color: black; /* Cambio de color de blanco a negro. */
+}
+/* Novedades */
+main h2 {
+    text-align: center; 
+    font-size: 22px; 
+    margin-top: 20px; 
+    margin-bottom: 20px; 
 }
 
-header h1 {
-    color: #C8102E;
-}
-
-h2 {
-    color: black;
-    text-align: center;
-}
-
+/* Contenido Principal */
 main {
     padding: 20px;
     max-width: 800px;
@@ -54,6 +101,7 @@ main section {
     margin-bottom: 20px;
 }
 
+/* Pie de Página */
 footer {
     background-color: #C8102E;
     color: white;
@@ -62,8 +110,9 @@ footer {
     margin-top: 20px;
 }
 
+/* Contenedor de Recuadros */
 .contenedor-recuadros {
-    display:inline-flex;
+    display: inline-flex;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 10px;
     padding: 10px;
@@ -83,4 +132,39 @@ footer {
     border-top-right-radius: 8px;
     width: 100%;
     height: 120px;
+}
+/* Para no agrandar los recuadros.*/
+.recuadro {
+    width: 100%; 
+    max-width: 250px; 
+    height: auto; 
+    max-height: 300px; 
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    overflow: hidden; /* Mod copilot */
+}
+
+.img_recuadro {
+    width: 100%;
+    height: 120px; 
+    object-fit: cover;
+}
+
+.recuadro h3 {
+    font-size: 16px; 
+}
+
+.recuadro p {
+    font-size: 14px;
+    line-height: 1.2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
 }
