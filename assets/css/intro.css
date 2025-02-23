@@ -1,0 +1,149 @@
+:root {
+    --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* 3era entrega, se agrega una foto a la introduccion*/
+.header-image {
+    width: 100%; /* Pantalla (ancho de la imagen) */
+    height: 130px; 
+    object-fit: cover; 
+    margin: 0; 
+    padding: 0; 
+    border: none; 
+    display: block; /* para quitar espacios */
+}
+
+/* Tooltip para el menú (si se usa) */
+nav ul li .tooltip {
+    display: none;
+    position: absolute;
+    background-color: #c00;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-top: 5px;
+    white-space: nowrap;
+    z-index: 100;
+    font-size: 14px;
+}
+
+nav ul li:hover .tooltip {
+    display: block;
+}
+
+nav ul li {
+    position: relative;
+}
+
+/* =====================================================
+   NUEVA BARRA DE NAVEGACIÓN
+   ===================================================== */
+
+/* Contenedor principal de la barra de navegación */
+/* Modifica el padding para alejar "CODDIS" y el botón de búsqueda de las esquinas.
+   Puedes ajustar el valor "40px" para aumentar o disminuir la separación. */
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Logo a la izquierda y botón a la derecha */
+    background-color: #C8102E;
+    padding: 10px 55px;
+}
+
+/* Estilo para el logo */
+.logo-section {
+    font-weight: bold;
+    color: white;
+    font-size: 22px;
+}
+
+/* Menú central */
+.nav-menu {
+    list-style-type: none;
+    display: flex;
+    gap: 15px; /* Espacio entre elementos */
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos para los enlaces del menú */
+.nav-menu li a {
+    color: white;
+    text-decoration: none;
+    font-size: 19px;
+    transition: color 0.3s ease;
+    font-family: var(--font-family-sans-serif);
+}
+
+.nav-menu li a:hover {
+    color: black;
+}
+
+/* Botón de búsqueda */
+.search-button {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    padding: 10px 20px;
+    background-color: #f2f2f2;
+    color: #C8102E;
+    border: 2px solid #C8102E;
+    border-radius: 5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-align: center;
+    width: 120px;
+    height: 40px;
+    transition: all 0.3s ease;
+}
+
+.search-button:hover {
+    background-color: #C8102E; /* Interior rojo */
+    border-color: white;       /* Contorno blanco */
+    color: white;
+}
+
+/* =====================================================
+   ESTILOS ADICIONALES (PUEDEN QUEDAR PARA OTRAS SECCIONES)
+   ===================================================== */
+
+/* Encabezado Principal (si se utiliza en otra parte) */
+.header-index {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    padding: 10px 20px;
+    background-color: #f2f2f2; 
+    height: 90px; 
+}
+
+/* Contenedor de los logos (si se utiliza en otra parte) */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 30px; 
+    margin-left: 40px; 
+}
+
+.logo-container img {
+    height: 70px; /* Tamaño de los logos */
+    width: auto; 
+}
+
+/* Novedades */
+main h2 {
+    text-align: center; 
+    font-size: 22px; 
+    margin-top: 20px; 
+    margin-bottom: 20px; 
+}

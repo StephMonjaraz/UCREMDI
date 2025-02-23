@@ -1,104 +1,106 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Educativa</title>
-    <link rel="stylesheet" href="stylesPortal.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página Educativa</title>
+  <link rel="stylesheet" href="assets/css/stylesPortal.css">
+  <!-- No se cargan dependencias de Bootstrap aquí, ya que el carrusel se carga en su propio documento -->
 </head>
 <body>
-<!-- Encabezado Principal -->
-<header class="header-index">
+  <!-- Encabezado Principal -->
+  <header class="header-index">
     <!-- Contenedor de los Logos -->
     <div class="logo-container">
-        <img src="Imagenes/EscudoFI-UNAM.png" alt="Logo FI">
-        <img src="Imagenes/FINegro.png" alt="Logo FI">
-        <img src="Imagenes/LogUCREMDI.png" alt="Logo FI">
+      <img src="assets/img/EscudoFI-UNAM.png" alt="Logo FI">
+      <img src="assets/img/FINegro.png" alt="Logo FI">
+      <img src="assets/img/LogUCREMDI.png" alt="Logo FI">
     </div>
     <!-- Botón de Búsqueda -->
     <button class="search-button">Búsqueda</button>
-</header>
+  </header>
 
+  <!-- Barra de Navegación -->
+  <nav>
+    <ul>
+      <li><a href="#Inicio">Inicio</a></li>
+      <li><a href="#División">División</a></li>
+      <li><a href="#Asignatura">Asignatura</a></li>
+      <li><a href="#Temas">Temas</a></li>
+    </ul>
+  </nav>
 
-    <!-- Se eliminó el Encabezado (Buenveida al curso)-->
+  <!-- Sección del Carrusel (integrado mediante iframe) -->
+  <section id="carrusel">
+    <!-- El iframe ahora tiene 700px de ancho y 500px de alto para coincidir con carousel.html -->
+    <iframe src="EcuacionesDiferenciales/Additional/carousel.html" width="1100" height="415" frameborder="0" scrolling="no"></iframe>
+  </section>
 
-    <!-- Barra de Navegación -->
-    <nav>
-        <ul>
-            <li><a href="#Inicio">Inicio</a></li>
-            <li><a href="#División">División</a></li>
-            <li><a href="#Asignatura">Asignatura</a></li>
-            <li><a href="#Temas">Temas</a></li>
-        </ul>
-    </nav>
+  <!-- Sección de Contenido Principal -->
+  <main>
+    <section>
+      <p>
+        Bienvenido <br>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, dolor. Omnis praesentium dolore voluptatibus corporis ipsa itaque sit nihil sunt repellat. Est recusandae eaque quaerat accusantium. Dignissimos deleniti quis dolor! <br>
+      </p>
+    </section>
+    <h2>Novedades</h2>
+    <section>
+      <div class="contenedor-recuadros">
+        <div class="recuadro">
+          <a href="#"><img class="img_recuadro" src="assets/img/curso1.jpg" alt="Curso 1"></a>
+          <div>
+            <h3>Álgebra Lineal</h3>
+            <p>Contenido descriptivo para el recuadro 1.</p>
+          </div>
+        </div>
+        <div class="recuadro">
+          <a href="#"><img class="img_recuadro" src="assets/img/curso2.jpg" alt="Curso 2"></a>
+          <h3>Álgebra</h3>
+          <p>Contenido descriptivo para el recuadro 2.</p>
+        </div>
+        <div class="recuadro">
+          <a href="EcuacionesDiferenciales/InicioFicha.html">
+            <img class="img_recuadro" src="assets/img/curso3.jpg" alt="Curso 3">
+            <h3>Ecuaciones Diferenciales</h3>
+            <p>Método de separación de variables para resolver ecuaciones.</p>
+          </a>
+        </div>
+        <div class="recuadro">
+          <a href="#"><img class="img_recuadro" src="assets/img/curso4.jpg" alt="Curso 4"></a>
+          <h3>Cálculo y Geometría Analítica</h3>
+          <p>Contenido descriptivo para el recuadro 4.</p>
+        </div>
+      </div>
+      <div class="contenedor-recuadros">
+        <div class="recuadro">
+          <a href="#"><img class="img_recuadro" src="assets/img/curso5.jpg" alt="Curso 5"></a>
+          <h3>Cálculo Integral</h3>
+          <p>Contenido descriptivo para el recuadro 1.</p>
+        </div>
+        <div class="recuadro">
+          <a href="#"><img class="img_recuadro" src="assets/img/curso6.jpg" alt="Curso 6"></a>
+          <h3>Química</h3>
+          <p>Contenido descriptivo para el recuadro 2.</p>
+        </div>
+        <div class="recuadro">
+          <a href="#"><img class="img_recuadro" src="assets/img/curso7.jpg" alt="Curso 7"></a>
+          <h3>Mecánica</h3>
+          <p>Contenido descriptivo para el recuadro 3.</p>
+        </div>
+        <div class="recuadro">
+          <a href="#"><img class="img_recuadro" src="assets/img/curso8.jpg" alt="Curso 8"></a>
+          <h3>Cálculo Vectorial</h3>
+          <p>Contenido descriptivo para el recuadro 4.</p>
+        </div>
+      </div>
+    </section>
+  </main>
 
-    <!-- Sección de Contenido Principal -->
-    <main>
-        <section>
-            <p>
-                Bienvenido <br>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, dolor. Omnis praesentium dolore voluptatibus corporis ipsa itaque sit nihil sunt repellat. Est recusandae eaque quaerat accusantium. Dignissimos deleniti quis dolor! <br>
-            </p>
-        </section>
-        <h2>Novedades</h2>
-        <section>
-            <div class="contenedor-recuadros">
-                <div class="recuadro">
-                    <a href="#"><img class="img_recuadro" src="./Imagenes/curso1.jpg" alt="Curso 1"></a>
-                    <div>
-                        <h3>Álgebra Lineal</h3>
-                        <p>Contenido descriptivo para el recuadro 1.</p>
-                    </div>
-                </div>
-                <div class="recuadro">
-                    <a href="#"><img class="img_recuadro" src="./Imagenes/curso2.jpg" alt="Curso 2"></a>
-                    <h3>Álgebra</h3>
-                    <p>Contenido descriptivo para el recuadro 2.</p>
-                </div>
-                <div class="recuadro">
-                    <a href="introduccion.html">
-                        <img class="img_recuadro" src="./Imagenes/curso3.jpg" alt="Curso 3">
-                        <h3>Ecuaciones Diferenciales</h3>
-                        <p>Método de separación de variables para resolver ecuaciones.</p>
-                    </a>
-                </div>
-                <div class="recuadro">
-                    <a href="#"><img class="img_recuadro" src="./Imagenes/curso4.jpg" alt="Curso 4"></a>
-                    <h3>Cálculo y Geometría Analítica</h3>
-                    <p>Contenido descriptivo para el recuadro 4.</p>
-                </div>
-            </div>
-            <div class="contenedor-recuadros">
-                <div class="recuadro">
-                    <a href="#"><img class="img_recuadro" src="./Imagenes/curso5.jpg" alt="Curso 5"></a>
-                    <h3>Cálculo Integral</h3>
-                    <p>Contenido descriptivo para el recuadro 1.</p>
-                </div>
-                <div class="recuadro">
-                    <a href="#"><img class="img_recuadro" src="./Imagenes/curso6.jpg" alt="Curso 6"></a>
-                    <h3>Química</h3>
-                    <p>Contenido descriptivo para el recuadro 2.</p>
-                </div>
-                <div class="recuadro">
-                    <a href="#"><img class="img_recuadro" src="./Imagenes/curso7.jpg" alt="Curso 7"></a>
-                    <h3>Mecánica</h3>
-                    <p>Contenido descriptivo para el recuadro 3.</p>
-                </div>
-                <div class="recuadro">
-                    <a href="#"><img class="img_recuadro" src="./Imagenes/curso8.jpg" alt="Curso 8"></a>
-                    <h3>Cálculo Vectorial</h3>
-                    <p>Contenido descriptivo para el recuadro 4.</p>
-                </div>
-            </div>           
-        </section>
-    </main>
-
-    <!-- Pie de Página -->
-    <footer>
-        <p>&copy; 2024 Universidad Nacional Autónoma de México</p>
-    </footer>
+  <!-- Pie de Página -->
+  <footer>
+    <p>&copy; 2024 Universidad Nacional Autónoma de México</p>
+  </footer>
 </body>
 </html>
-
-
 
