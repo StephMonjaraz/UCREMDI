@@ -1,81 +1,151 @@
 <!DOCTYPE html>
 <html lang="es">
-<head> 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Introducción - Ecuaciones Diferenciales</title>
-    <link rel="stylesheet" href="../assets/css/intro.css">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contenido - Ecuaciones Diferenciales</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <style>
+    /* ---------- RESETEO BÁSICO Y FUENTE ----------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+      color: #333;
+    }
 
-   
+    /* ---------- ENCABEZADO SUPERIOR ----------- */
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #c00; /* Rojo principal */
+      color: #fff;
+      padding: 10px 20px;
+    }
+    .logo-section {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    .search-button {
+      background-color: #fff;
+      color: #c00;
+      padding: 6px 12px;
+      text-decoration: none;
+      border-radius: 4px;
+      border: 2px solid #fff;
+      transition: 0.3s;
+    }
+    .search-button:hover {
+      background-color: #c00;
+      color: #fff;
+      border: 2px solid #fff;
+    }
+
+    /* ---------- MENÚ DE NAVEGACIÓN SUPERIOR ----------- */
+    nav {
+      background-color: #f5f5f5;
+      padding: 10px 20px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+    }
+    nav ul li {
+      position: relative;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #c00;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: #900; /* Un tono más oscuro al pasar el ratón */
+    }
+    nav ul li a.active {
+      text-decoration: underline;
+      color: #900;
+    }
+    /* ---------- CONTENEDOR PRINCIPAL ----------- */
+    .main-container {
+      padding: 20px; 
+    }
+
+    /* ---------- SECCIÓN DE REFERENCIAS ----------- */
+    .references-title {
+      color: #c00;                
+      margin-bottom: 10px;      
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    .references-list {
+      margin-left: 20px;         
+      line-height: 1.5;          
+    }
+  </style>
 </head>
-
 <body>
-    <!-- Imagen representativa de ecuacoes -->
-    <img src="../assets/img/ecuaciones.jpg" alt="Ecuaciones Diferenciales" class="header-image">
+  <!-- Barra roja superior -->
+  <div class="header-top">
+    <div class="logo-section">CODDIS</div>
+    <a href="#" class="search-button">Búsqueda</a>
+  </div>
 
-  
-<!-- Menú de navegación con CODDIS y Búsqueda dentro -->
-<nav>
-    <div class="nav-container">
-        <div class="logo-section">CODDIS</div>
-        <ul class="nav-menu">
-            <li><a href="../EcuacionesDiferenciales/contenido.html">Contenido</a></li>
-            <li><a href="../EcuacionesDiferenciales/actividades.html">Actividades</a></li>
-            <li><a href="../EcuacionesDiferenciales/autoevaluacion.html">Autoevaluación</a></li>
-            <li><a href="../EcuacionesDiferenciales/fuentes.html">Fuentes</a></li>
-        </ul>
-        <div class="search-button">Búsqueda</div>
+  <!-- Menú de navegación -->
+  <nav>
+    <ul>
+      <li><a href="introduccion.html">Introducción</a></li>
+      <li><a href="contenido.html">Contenido</a></li>
+      <li><a href="actividades.html">Actividades</a></li>
+      <li><a href="autoevaluacion.html">Autoevaluación</a></li>
+      <li><a href="fuentes.html">Fuentes</a></li>
+    </ul>
+  </nav>
+
+   <!-- Contenedor principal-->
+   <div class="main-container">
+    <!-- Sección de Referencias -->
+    <h2 class="references-title">Introducción al Recurso Digital</h2>
+    <div class="references-list">
+
+      <p style="margin-top: 20px; color: black; font-size: 18px;" >El método de separación de variables es una técnica fundamental en el estudio de las  ecuaciones diferenciales ordinarias. Este método se utiliza para resolver ecuaciones en las que las variables algebraicamente pueden separarse. Al reorganizar la ecuación diferencial de manera que cada variable y su diferencial correspondiente estén en lados opuestos, se pueden integrar ambos lados de forma independiente. Esto permite obtener una solución general para la ecuación diferencial, facilitando la comprensión y resolución de problemas en diversas áreas de la ciencia y la ingeniería.</p>
+
+
     </div>
-</nav>
+  </div> <!-- /main-container -->
+  <script>
+    // Esta función muestra el contenido del ejercicio seleccionado y oculta los demás
+    function showExercise(exerciseId) {
+      // Oculta el contenido de bienvenida
+      document.getElementById('welcome-content').style.display = 'none';
 
+      // Obtiene todos los elementos con la clase 'exercise-content'
+      const allExercises = document.querySelectorAll('.exercise-content');
+      
+      // Los oculta todos
+      allExercises.forEach(ex => ex.style.display = 'none');
 
-<!-- INFO DE LA PAGINA -->
-    <main>
-        <section id="informacion-general" style="padding: 20px; margin: 45px auto; max-width: 900px;">
-            <h2 style="color: #c00; border-bottom: 2px solid #c00; padding-bottom: 5px;">Información General</h2>
-            <p><strong style="color: #c00;">Asignatura:</strong> Ecuaciones Diferenciales (1325)</p>
-            <p><strong style="color: #c00;">Descripción del curso:</strong> Método de separación de variables para resolver ecuaciones diferenciales ordinarias</p>
-            <p><strong style="color: #c00;">Dirigido a:</strong> Recurso diseñado para estudiantes de (3er) semestre</p>
-            <p><strong style="color: #c00;">Autores:</strong> Evelyn Salazar Guerrero, Edgar Ali Ramos Gómez</p>
-        </section>
-    </main>
+      // Muestra únicamente el que se seleccionó
+      const selected = document.getElementById(exerciseId);
+      if (selected) {
+        selected.style.display = 'block';
+      }
+    }
 
-    <script>
-        let currentIndex = 1; 
-        const carousel = document.getElementById('carousel');
-        const totalItems = carousel.children.length;
-        let autoScroll;
+    // Detecta la página actual basándose en la URL y resalta el enlace activo
+    const links = document.querySelectorAll('nav ul li a');
+    links.forEach(link => {
+      if (link.href === window.location.href) {
+        link.classList.add('active');
+      }
+    });
+  </script>
 
-        carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
-
-        function startAutoScroll() {
-            autoScroll = setInterval(() => moveCarousel(1), 2000); // Tiempo cambio del carrusel
-        }
-
-        function moveCarousel(direction) {
-            clearInterval(autoScroll); 
-
-            currentIndex += direction;
-            carousel.style.transition = 'transform 0.4s ease'; 
-            carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
-
-            // Bucle continuo del carrusel
-            carousel.addEventListener('transitionend', () => {
-                if (currentIndex === totalItems - 1) {
-                    carousel.style.transition = 'none';
-                    currentIndex = 1;
-                    carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
-                } else if (currentIndex === 0) {
-                    carousel.style.transition = 'none';
-                    currentIndex = totalItems - 2;
-                    carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
-                }
-                startAutoScroll();
-            }, { once: true });
-        }
-
-        // Desp automático
-        startAutoScroll();
-    </script>
 </body>
 </html>
