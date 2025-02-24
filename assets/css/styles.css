@@ -131,14 +131,12 @@ footer {
 }
 
 .tabla_contenidos {
-    display: flexbox;
-    justify-content: center;
-    width: 60%;
-    max-width: 500px;
-    padding: 20px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Alinea elementos */
+    position: relative;
+    height: 10%; /* Altura completa de la pantalla */
+    width: 50%;
 }
 
 .references-list {
