@@ -1,87 +1,148 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contenido - Ecuaciones Diferenciales</title>
-    <link rel="stylesheet" href="../assets/css/styles.css">
-    <style>
-        /* Tooltip para el submenu emergente */
-        nav ul li .tooltip {
-            display: none;
-            position: absolute;
-            background-color:  #c00; /* Fondo semitransparente */
-            color: white;
-            padding: 5px 10px;
-            border-radius: 5px;
-            margin-top: 5px;
-            white-space: nowrap;
-            z-index: 100;
-            font-size: 14px;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contenido - Ecuaciones Diferenciales</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <style>
+    /* ---------- RESETEO BÁSICO Y FUENTE ----------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+      color: #333;
+    }
 
-        nav ul li:hover .tooltip {
-            display: block; /* Se muestra al pasar el ratón */
-        }
+    /* ---------- ENCABEZADO SUPERIOR ----------- */
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #c00; /* Rojo principal */
+      color: #fff;
+      padding: 10px 20px;
+    }
+    .logo-section {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    .search-button {
+      background-color: #fff;
+      color: #c00;
+      padding: 6px 12px;
+      text-decoration: none;
+      border-radius: 4px;
+      border: 2px solid #fff;
+      transition: 0.3s;
+    }
+    .search-button:hover {
+      background-color: #c00;
+      color: #fff;
+      border: 2px solid #fff;
+    }
 
-        nav ul li {
-            position: relative; /* Necesario para posicionar el tooltip */
-        }
-    </style>
+    /* ---------- MENÚ DE NAVEGACIÓN SUPERIOR ----------- */
+    nav {
+      background-color: #f5f5f5;
+      padding: 10px 20px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+    }
+    nav ul li {
+      position: relative;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #c00;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: #900; /* Un tono más oscuro al pasar el ratón */
+    }
+    nav ul li a.active {
+      text-decoration: underline;
+      color: #900;
+    }
+    /* ---------- CONTENEDOR PRINCIPAL ----------- */
+    .main-container {
+      padding: 20px; 
+    }
+
+    /* ---------- SECCIÓN DE REFERENCIAS ----------- */
+    .references-title {
+      color: #c00;                
+      margin-bottom: 10px;      
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    .references-list {
+      margin-left: 20px;         
+      line-height: 1.5;          
+    }
+  </style>
 </head>
 <body>
-    <!-- Barra roja superior -->
-    <div class="header-top">
-        <div class="logo-section">CODDIS</div>
-        <div class="search-button">Búsqueda</div>
-    </div>
+  <!-- Barra roja superior -->
+  <div class="header-top">
+    <div class="logo-section">CODDIS</div>
+    <a href="#" class="search-button">Búsqueda</a>
+  </div>
 
-    <!-- Menú de navegación -->
-    <nav>
-        <ul>
-            <li><a href="introduccion.html">Introducción</a></li>
-            <li><a href="contenido.html">Contenido</a></li>
-            <li><a href="actividades.html">Actividades</a></li>
-            <li><a href="autoevaluacion.html">Autoevaluación</a></li>
-            <li><a href="fuentes.html">Fuentes</a></li>
-        </ul>
-    </nav>
+  <!-- Menú de navegación -->
+  <nav>
+    <ul>
+      <li><a href="introduccion.html">Introducción</a></li>
+      <li><a href="contenido.html">Contenido</a></li>
+      <li><a href="actividades.html">Actividades</a></li>
+      <li><a href="autoevaluacion.html">Autoevaluación</a></li>
+      <li><a href="fuentes.html">Fuentes</a></li>
+    </ul>
+  </nav>
 
-    <!-- Contenido de la página -->
-    <main>
-        <section id="contenedor-seccion">
-            <h2>Contenido</h2>
-            <h3>1. Forma de este tipo de ecuaciones diferenciales</h3>
+   <!-- Contenido de la página -->
+   <main>
+    <section id="contenedor-seccion">
+        <h2>Contenido</h2>
+        <h3>1. Forma de este tipo de ecuaciones diferenciales</h3>
 
-            <p id="parrafo">Este método se utiliza para ecuaciones diferenciales de primer orden, por lo que tendremos una primera derivada únicamente, en la cual podemos identificar un sólo cociente o producto de dos funciones igualadas a una derivada. </p>
+        <p id="parrafo">Este método se utiliza para ecuaciones diferenciales de primer orden, por lo que tendremos una primera derivada únicamente, en la cual podemos identificar un sólo cociente o producto de dos funciones igualadas a una derivada. </p>
 
-            <p id="parrafo">Se dice que una ecuación diferencial de variables separables es aquella que tiene la forma tal que podría reescribirse separando las variables “x” y “y” mediante el símbolo de igualdad, podríamos tener lo siguiente:</p>
+        <p id="parrafo">Se dice que una ecuación diferencial de variables separables es aquella que tiene la forma tal que podría reescribirse separando las variables “x” y “y” mediante el símbolo de igualdad, podríamos tener lo siguiente:</p>
 
-            <figure style="text-align: center;">
-                <img id="imagen" src="./derivada.jpg" >
-            </figure>
+        <figure style="text-align: center;">
+            <img id="imagen" src="./derivada.jpg" >
+        </figure>
 
-            <p id="parrafo">Se observa que la primera derivada en el primer caso esta igualada a un producto de funciones en donde cada una de ellas podemos identificar por depender de una sola variable, en este caso una función f que solo depende de “x”, multiplicada por una función g que depende solo de la variable “y”. En el segundo caso la primera derivada esta asociada con un cociente de funciones, en donde de la misma forma en el numerador hay una función f que depende solo de la variable “x” y en el denominador hay una función g que depende de la variable “y”.</p>
-            
-            <h3>2. Pasos a seguir para resolver este tipo de ecuaciones</h3>
+        <p id="parrafo">Se observa que la primera derivada en el primer caso esta igualada a un producto de funciones en donde cada una de ellas podemos identificar por depender de una sola variable, en este caso una función f que solo depende de “x”, multiplicada por una función g que depende solo de la variable “y”. En el segundo caso la primera derivada esta asociada con un cociente de funciones, en donde de la misma forma en el numerador hay una función f que depende solo de la variable “x” y en el denominador hay una función g que depende de la variable “y”.</p>
+        
+        <h3>2. Pasos a seguir para resolver este tipo de ecuaciones</h3>
 
-            <ol>
-                <li><p id="parrafo">Observar si la ecuación diferencial tenga un producto o cociente de funciones en las que cada una de ellas dependa de una sola variable.</p></li>
-                <li><p id="parrafo">Utilizando algún método algebraico válido que permita agrupar y separar las funciones con su respectivo diferencial; como sugerencia utilizamos el símbolo de igualdad para separar las funciones y diferenciales.</p></li>
-                <li><p id="parrafo">Integramos cada lado de la ecuación, incorporando una constante C arbitraria por tratarse de integrales indefinidas.</p></li>
-            </ol>
-        </section>
-    </main>
+        <ol>
+            <li><p id="parrafo">Observar si la ecuación diferencial tenga un producto o cociente de funciones en las que cada una de ellas dependa de una sola variable.</p></li>
+            <li><p id="parrafo">Utilizando algún método algebraico válido que permita agrupar y separar las funciones con su respectivo diferencial; como sugerencia utilizamos el símbolo de igualdad para separar las funciones y diferenciales.</p></li>
+            <li><p id="parrafo">Integramos cada lado de la ecuación, incorporando una constante C arbitraria por tratarse de integrales indefinidas.</p></li>
+        </ol>
+    </section>
+</main>
 
-    <script>
-        // Detecta la página actual basándose en la URL
-        const links = document.querySelectorAll('nav ul li a');
-        links.forEach(link => {
-            if (link.href === window.location.href) {
-                link.classList.add('active');
-            }
-        });
-    </script>
+<script>
+    // Detecta la página actual basándose en la URL
+    const links = document.querySelectorAll('nav ul li a');
+    links.forEach(link => {
+        if (link.href === window.location.href) {
+            link.classList.add('active');
+        }
+    });
+</script>
+
 </body>
 </html>
-
