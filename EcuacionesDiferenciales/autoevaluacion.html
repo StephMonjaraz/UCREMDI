@@ -1,111 +1,261 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contenido - Ecuaciones Diferenciales</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Tooltip para el submenu emergente */
-        nav ul li .tooltip {
-            display: none;
-            position: absolute;
-            background-color:  #c00; /* Fondo semitransparente */
-            color: white;
-            padding: 5px 10px;
-            border-radius: 5px;
-            margin-top: 5px;
-            white-space: nowrap;
-            z-index: 100;
-            font-size: 14px;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Autoevaluación - Ecuaciones Diferenciales</title>
+  <link rel="stylesheet" href="../assets/css/menu.css">
+  <style>
+    /* Contenedor principal del contenido */
+    .content-area {
+      max-width: 850px;
+      margin: 30px auto;
+      padding: 20px;
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
 
-        nav ul li:hover .tooltip {
-            display: block; /* Se muestra al pasar el ratón */
-        }
+    /* Estilo de los títulos */
+    .content-area h2 {
+      color: #c00;
+      padding-left: 8px;
+      margin-bottom: 20px;
+    }
 
-        nav ul li {
-            position: relative; /* Necesario para posicionar el tooltip */
-        }
-    </style>
+    .content-area h3 {
+      color: #c00;
+      margin-top: 30px;
+      margin-bottom: 15px;
+      padding: 10px;
+      background: #f8f8f8;
+      border-radius: 6px;
+      text-align: center;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Estilo del texto */
+    .content-area p {
+      text-align: justify;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    /* Estilos para preguntas */
+    .question {
+      font-weight: bold;
+      color: #900;
+      margin-top: 20px;
+    }
+
+    /* Opciones del cuestionario */
+    .options label {
+      display: block;
+      margin: 5px 0;
+      padding: 8px;
+      border-radius: 6px;
+      cursor: pointer;
+      background: #f3f3f3;
+      transition: 0.3s;
+    }
+
+    .options label:hover {
+      background: #e3e3e3;
+    }
+
+    /* Botón para enviar respuestas */
+    .submit-btn {
+      margin-top: 20px;
+      padding: 10px 15px;
+      background: #c00;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .submit-btn:hover {
+      background: #900;
+    }
+
+    /* Resultado del cuestionario */
+    .result {
+      margin-top: 20px;
+      padding: 10px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-align: center;
+      background: #f8f8f8;
+      border-radius: 6px;
+      display: none;
+    }
+  </style>
+
+  <!-- MathJax para renderizar ecuaciones matemáticas -->
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+
 </head>
 <body>
-    <!-- Barra roja superior -->
-    <div class="header-top">
-        <div class="logo-section">CODDIS</div>
-        <div class="search-button">Búsqueda</div>
-    </div>
 
-    <!-- Menú de navegación -->
-    <nav>
-        <ul>
-            <li><a href="introduccion.html">Introducción</a></li>
-            <li><a href="contenido.html">Contenido</a></li>
-            <li><a href="actividades.html">Actividades</a></li>
-            <li><a href="autoevaluacion.html">Autoevaluación</a></li>
-            <li><a href="fuentes.html">Fuentes</a></li>
-        </ul>
-    </nav>
+  <!-- Barra roja superior -->
+  <div class="header-top">
+    <a href="../index.html" class="logo-button">CODDIS</a>
+    <a href="#" class="search-button">Búsqueda</a>
+  </div>
 
-    <!-- Contenido de la página -->
-    <main>
-        <h2>Autoevaluación</h2>
-        <section id="contenedor-seccion">
-            <h3>Partiendo de los ejercicios propuestos responde las siguientes preguntas:</h3>
-            <p style="text-align: center;" id="parrafo">Cuestionario</p>
+  <!-- Menú de navegación -->
+  <nav>
+    <ul>
+      <li><a href="introduccion.html">Introducción</a></li>
+      <li><a href="contenido.html">Contenido</a></li>
+      <li><a href="actividades.html">Actividades</a></li>
+      <li><a href="autoevaluacion.html" class="active">Autoevaluación</a></li>
+      <li><a href="fuentes.html">Fuentes</a></li>
+    </ul>
+  </nav>
 
-            <form onsubmit="return validarRespuestas()">
-                <p>1.- Selecciona el enunciado que sea verdadero</p>
-                <label>
-                    <input type="radio" name="pregunta1" value="A">
-                    <p>a.	Solo dos de las ecuaciones diferenciales se resuelven por el método de variables separables, ya que tienen funciones trigonométricas seno y coseno</p>
-                </label><br>
-                <label>
-                    <input type="radio" name="pregunta1" value="B">
-                    <p>b.	La primera ecuación no es de variables separables, las otras dos sí.</p>
-                </label><br>
-                <label>
-                    <input type="radio" name="pregunta1" value="C">
-                    <p>c.	Las tres ecuaciones diferenciales se resuelven por el método de variables separables, ya que podemos proponer productos o cocientes de funciones que dependen de una sola variable.</p>
-                </label><br>
-                <label>
-                    <input type="radio" name="pregunta1" value="D">
-                    <p>d.	Solo la primera ecuación diferencial es de variables separables ya que las otras dos cuentan con una suma de funciones que no puede separarse.</p>
-                </label><br>
-        
-                <input id="boton" type="submit" value="Comprobar">
-                <br>
-            </form>
-        
-            <div id="resultado"></div>
-            <br>
-        </section>
-    </main>
+  <!-- Contenido principal -->
+  <main class="content-area">
+    <h3>Comprueba tus conocimientos</h3>
 
-    <script>
-        // Detecta la página actual basándose en la URL
-        const links = document.querySelectorAll('nav ul li a');
-        links.forEach(link => {
-            if (link.href === window.location.href) {
-                link.classList.add('active');
-            }
-        });
-        // Validar Respuestas
-        function validarRespuestas() {
-            let respuestas = document.querySelectorAll('input[type="radio"]:checked');
-            let resultado = '';
+    <p>Selecciona la respuesta correcta para cada pregunta y haz clic en "Finalizar" para conocer tu puntaje.</p>
 
-            // Respuesta correcta para la pregunta 1
-            if (document.querySelector('input[name="pregunta1"]:checked').value === 'C') {
-                resultado += 'Pregunta 1: Correcta!<br>';
-            } else {
-                resultado += 'Pregunta 1: Incorrecta.<br>';
-            }
+    <form id="quiz-form">
+      <!-- Pregunta 1 -->
+      <div class="question">1. Selecciona el enunciado que sea verdadero.</div>
+      <div class="options">
+        <label><input type="radio" name="q1" value="incorrecto1"> Solo dos ecuaciones, ya que tienen funciones trigonométricas seno y coseno.</label>
+        <label><input type="radio" name="q1" value="correcto"> La primera ecuación no es de variables separables, las otras dos sí.</label>
+        <label><input type="radio" name="q1" value="incorrecto2"> Las tres ecuaciones pueden resolverse por separación de variables.</label>
+        <label><input type="radio" name="q1" value="incorrecto3"> Solo la primera ecuación diferencial es de variables separables.</label>
+      </div>
 
-            document.getElementById('resultado').innerHTML = resultado;
-            return false;  // Para evitar el envío del formulario
+      <!-- Pregunta 2 -->
+      <div class="question">2. En el proceso de resolución del ejercicio por variables separables, se tienen las siguientes integrales a evaluar:</div>
+      <div class="options">
+        <label>
+          <input type="radio" name="q2" value="incorrecto1">
+          \( \int \frac{dy}{1+y^2} = \int \frac{dx}{x^2} - \int dx \)
+        </label>
+        <label>
+          <input type="radio" name="q2" value="correcto">
+          \( \int \frac{dy}{1 - y^2} = \int \frac{dx}{x^2} + \int dx \)
+        </label>
+        <label>
+          <input type="radio" name="q2" value="incorrecto2">
+          \( \int \frac{dy}{1 - y^2} = -\int \frac{dx}{x^2} - \int dx \)
+        </label>
+        <label>
+          <input type="radio" name="q2" value="incorrecto3">
+          <i>No es posible separar variables</i>
+        </label>
+      </div>
+      <!-- Pregunta 3 -->
+<div class="question">3. La solución general del ejercicio \( i \) es:</div>
+<div class="options">
+  <label>
+    <input type="radio" name="q3" value="incorrecto1">
+    <i>No es posible obtener su solución por este método</i>
+  </label>
+  <label>
+    <input type="radio" name="q3" value="incorrecto2">
+    \( \arctan(y) = -\frac{1}{x} - x + C \)
+  </label>
+  <label>
+    <input type="radio" name="q3" value="correcto">
+    \( \arctan(y) = \frac{1}{x} + x + C \)
+  </label>
+  <label>
+    <input type="radio" name="q3" value="incorrecto3">
+    \( -\arctan(y) = -\frac{1}{x} - x + C \)
+  </label>
+</div>
+<!-- Pregunta 4 -->
+<div class="question">4. La separación de variables que se tiene en el ejercicio \( ii \) está en la opción:</div>
+<div class="options">
+  <label>
+    <input type="radio" name="q4" value="incorrecto1">
+    \( \frac{x+2}{x}dx = -\frac{\cos y}{\sin y} dy \)
+  </label>
+  <label>
+    <input type="radio" name="q4" value="incorrecto2">
+    <i>No es posible separar sus variables</i>
+  </label>
+  <label>
+    <input type="radio" name="q4" value="correcto">
+    \( \frac{x}{x+2} dx = -\frac{\cos y}{\sin y} dy \)
+  </label>
+  <label>
+    <input type="radio" name="q4" value="incorrecto3">
+    \( \frac{x+2}{x} dx = -\frac{\cos y}{\sin y} dy \)
+  </label>
+</div>
+<!-- Pregunta 5 -->
+<div class="question">5. La solución general del ejercicio \( ii \) es:</div>
+<div class="options">
+  <label>
+    <input type="radio" name="q5" value="incorrecto1">
+    \( x+2\ln x - \ln (\cos y) = C \)
+  </label>
+  <label>
+    <input type="radio" name="q5" value="incorrecto2">
+    \( x+2\ln x - \ln (\sin y) = C \)
+  </label>
+  <label>
+    <input type="radio" name="q5" value="correcto">
+    \( x+2\ln x + \ln (\sin y) = C \)
+  </label>
+  <label>
+    <input type="radio" name="q5" value="incorrecto3">
+    \( 1+2\ln x = -\ln (\cos y) + C \)
+  </label>
+</div>
+
+
+      <!-- Botón para finalizar -->
+      <button type="button" class="submit-btn" onclick="calcularResultados()">Finalizar</button>
+    </form>
+
+    <!-- Resultado -->
+    <div id="result" class="result"></div>
+
+  </main>
+
+  <script>
+    function calcularResultados() {
+      let puntaje = 0;
+      let totalPreguntas = 5;
+
+      // Respuestas correctas
+      const respuestas = {
+        q1: "correcto",
+        q2: "correcto"
+      };
+
+      // Verificar selección del usuario
+      Object.keys(respuestas).forEach(pregunta => {
+        const seleccion = document.querySelector(`input[name="${pregunta}"]:checked`);
+        if (seleccion && seleccion.value === respuestas[pregunta]) {
+          puntaje++;
         }
-    </script>
+      });
+
+      // Mostrar resultado
+      const resultadoDiv = document.getElementById("result");
+      resultadoDiv.style.display = "block";
+      resultadoDiv.innerHTML = `Tu puntaje es ${puntaje} de ${totalPreguntas}.`;
+
+      if (puntaje === totalPreguntas) {
+        resultadoDiv.innerHTML += " ¡Felicidades! 🎉 Has respondido todo correctamente.";
+      } else {
+        resultadoDiv.innerHTML += " Repasa el material y vuelve a intentarlo. Puedes hacerlo mejor.";
+      }
+    }
+  </script>
+
 </body>
 </html>
 
