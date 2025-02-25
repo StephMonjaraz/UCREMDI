@@ -147,3 +147,7 @@ main h2 {
     margin-top: 20px; 
     margin-bottom: 20px; 
 }
+#introduccion p {
+    text-align: justify;
+    line-height: 1.6; /* Espaciado entre líneas para mejorar la legibilidad */
+}
