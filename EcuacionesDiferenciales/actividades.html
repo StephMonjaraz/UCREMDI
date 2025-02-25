@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contenido - Ecuaciones Diferenciales</title>
+  <link rel="stylesheet" href="../assets/css/menu.css">
+  <style>
+    
+    /* ---------- CONTENEDOR PRINCIPAL: DOS COLUMNAS ----------- */
+    .main-container {
+      display: flex; /* Para dividir en dos columnas: aside y contenido */
+      min-height: calc(100vh - 130px); /* Altura mínima para pantalla completa (resta header + nav) */
+    }
+
+    /* ---------- BARRA LATERAL IZQUIERDA (LISTA DE EJERCICIOS) ----------- */
+    aside.sidebar {
+      width: 300px;
+      background-color: #f5f5f5;
+      border-right: 1px solid #ccc;
+      padding: 20px;
+    }
+    aside.sidebar h2 {
+      color: #c00;
+      margin-bottom: 15px;
+    }
+    aside.sidebar ul {
+      list-style: none;
+    }
+    aside.sidebar li {
+      margin-bottom: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      color: #c00;
+    }
+    aside.sidebar li:hover {
+      color: #900;
+      text-decoration: underline;
+    }
+
+    /* ---------- SECCIÓN DE CONTENIDO A LA DERECHA ----------- */
+    .content-area {
+      flex: 1; /* Toma el espacio restante */
+      padding: 20px;
+    }
+    .content-area h3 {
+      color: #c00;
+      margin-bottom: 10px;
+      border-left: 4px solid #c00;
+      padding-left: 8px;
+    }
+    .content-area h4 {
+      color: #c00;
+      margin: 15px 0 10px;
+    }
+    .content-area p,
+    .content-area li {
+      margin: 10px 0;
+      text-align: justify;
+      line-height: 1.5;
+    }
+    .content-area ol, .content-area ul {
+      margin: 10px 30px;
+    }
+
+    /* Ocultamos las secciones de ejercicio por defecto */
+    .exercise-content {
+      display: none;
+    }
+
+    /* ---------- SECCIÓN DE BIENVENIDA (SIN EJERCICIO SELECCIONADO) ----------- */
+    .welcome-content {
+      text-align: center;
+    }
+    .welcome-content img {
+      max-width: 60%;
+      height: auto;
+      border: 2px solid #c00;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    .welcome-content p {
+      font-size: 1.1rem;
+      color: #666;
+    }
+
+    /* ---------- TIMELINE (LÍNEA DE TIEMPO) PARA PASOS ----------- */
+    .timeline {
+      position: relative;
+      margin: 20px 0;
+      padding: 0;
+    }
+    /* Línea vertical */
+    .timeline:before {
+      content: "";
+      position: absolute;
+      left: 60px; /* Mueve la línea más a la derecha */
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: #c00;
+      border-radius: 2px;
+    }
+    .timeline-item {
+      position: relative;
+      margin-left: 120px; /* Separa el texto de la línea */
+      margin-bottom: 40px;
+      min-height: 50px;
+    }
+    .timeline-icon {
+      position: absolute;
+      left: -50px;
+      top: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #c00;
+      color: #fff;
+      text-align: center;
+      line-height: 40px;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+    .timeline-content {
+      background: #f9f9f9;
+      padding: 15px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    .timeline-content strong {
+      color: #900;
+    }
+    .timeline-content p {
+      margin: 10px 0 0;
+    }
+    .formula {
+      font-style: italic;
+      color: #444;
+      display: block;
+      margin: 10px 0;
+      text-align: center;
+    }
+
+    /* ---------- CLASES PARA FRACCIONES VERTICALES ----------- */
+    .frac {
+      display: inline-block;
+      text-align: center;
+      vertical-align: middle;
+      margin: 0 2px;
+    }
+    .frac .top {
+      display: block;
+      border-bottom: 1px solid #000;
+      line-height: 1;
+      padding: 0 4px;
+    }
+    .frac .bottom {
+      display: block;
+      line-height: 1;
+      padding: 0 4px;
+    }
+    /* ---------- CONTENEDOR PRINCIPAL: DOS COLUMNAS ----------- */
+.main-container {
+    display: flex; /* Para dividir en dos columnas: aside y contenido */
+    min-height: calc(100vh - 130px); /* Altura mínima para pantalla completa (resta header + nav) */
+  }
+
+  </style>
+</head>
+<body>
+   <!-- Barra roja superior -->
+   <div class="header-top">
+    <a href="../index.html" class="logo-button">CODDIS</a>
+    <a href="#" class="search-button">Búsqueda</a>
+  </div>
+
+  <!-- Menú de navegación -->
+  <nav>
+    <ul>
+      <li><a href="introduccion.html">Introducción</a></li>
+      <li><a href="contenido.html">Contenido</a></li>
+      <li><a href="actividades.html" class="active">Actividades</a></li>
+      <li><a href="autoevaluacion.html">Autoevaluación</a></li>
+      <li><a href="fuentes.html">Fuentes</a></li>
+    </ul>
+  </nav>
+
+  <!-- Contenedor principal: barra lateral + área de contenido -->
+  <div class="main-container">
+    
+    <!-- Barra lateral con la lista de ejercicios -->
+    <aside class="sidebar">
+      <h2>Ejercicios</h2>
+      <ul>
+        <li onclick="showExercise('ex1')">Ejercicio 1</li>
+        <li onclick="showExercise('ex2')">Ejercicio 2</li>
+        <li onclick="showExercise('propuestos')">Ejercicios Propuestos</li>
+      </ul>
+    </aside>
+
+    <!-- Área de contenido (lado derecho) -->
+    <div class="content-area">
+
+      <!-- Contenido de bienvenida por defecto (si no se selecciona nada) -->
+      <div id="welcome-content" class="welcome-content">
+        <img src="https://www.gaceta.unam.mx/wp-content/uploads/2019/02/190211-Gob1-des-f1-facultad-ingenieria.jpg" alt="Imagen de Bienvenida">
+        <p>Seleccione un ejercicio en la barra lateral para ver su contenido.</p>
+      </div>
+
+      <!-- EJERCICIO 1 -->
+      <div id="ex1" class="exercise-content">
+        <h3>Ejercicio 1: Resolver la ecuación diferencial 
+          <div class="formula">
+            x e<sup>x+y</sup> 
+            <span class="frac">
+              <span class="top">dy</span>
+              <span class="bottom">dx</span>
+            </span>
+            + y e<sup>x+y</sup> = 0
+          </div>
+        </h3>
+
+        <!-- LÍNEA DE TIEMPO PARA LOS PASOS -->
+        <div class="timeline">
+
+          <!-- Paso 1 -->
+          <div class="timeline-item">
+            <div class="timeline-icon">1</div>
+            <div class="timeline-content">
+              <strong>Primero observamos:</strong>
+              <p>
+                Primero observamos si la ecuación diferencial se puede hacer por el método de variables separables; 
+                esto significa que tenga un producto de funciones, que no tenga suma entre las variables dependiente 
+                e independiente, y que si tiene sea porque se puede factorizar.
+              </p>
+              <div class="formula">
+                x e<sup>x+y</sup> 
+                <span class="frac">
+                  <span class="top">dy</span>
+                  <span class="bottom">dx</span>
+                </span>
+                + y e<sup>x+y</sup> = 0
+              </div>
+            </div>
+          </div>
+
+          <!-- Paso 2 -->
+          <div class="timeline-item">
+            <div class="timeline-icon">2</div>
+            <div class="timeline-content">
+              <strong>Observamos que hay una suma de variables:</strong>
+              <p>
+                Observamos que hay una suma de variables en el argumento de 
+                la función exponencial; sin embargo, esta suma puede separarse aplicando 
+                propiedades adecuadas, como se observa a continuación:
+              </p>
+              <div class="formula">
+                x e<sup>x</sup> e<sup>y</sup> 
+                <span class="frac">
+                  <span class="top">dy</span>
+                  <span class="bottom">dx</span>
+                </span>
+                = y e<sup>x</sup> e<sup>y</sup> 
+                <span class="frac">
+                  <span class="top">dx</span>
+                  <span class="bottom">dy</span> <!-- <--- Este no se menciona en el original, revisa si es un error -->
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Paso 3 -->
+          <div class="timeline-item">
+            <div class="timeline-icon">3</div>
+            <div class="timeline-content">
+              <strong>Reescritura:</strong>
+              <p>
+                Reescribiendo la ecuación diferencial vemos que la ecuación se puede separar para que los términos que tienen “y” se agrupen 
+                con la diferencial de 
+                <span class="frac">
+                  <span class="top">dy</span>
+                  <span class="bottom">dx</span>
+                </span>
+                y los términos que tienen “x” se agrupen con la diferencial de 
+                <span class="frac">
+                  <span class="top">dx</span>
+                  <span class="bottom">dy</span>
+                </span>,
+                procurando que las funciones y sus diferenciales queden separadas por el símbolo de igualdad
+              </p>
+              <div class="formula">
+                e<sup>y</sup> / y e<sup>y</sup> 
+                <span class="frac">
+                  <span class="top">dy</span>
+                  <span class="bottom">dx</span>
+                </span>
+                = e<sup>x</sup> / x e<sup>x</sup> 
+                <span class="frac">
+                  <span class="top">dx</span>
+                  <span class="bottom">dy</span>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Paso 4 -->
+          <div class="timeline-item">
+            <div class="timeline-icon">4</div>
+            <div class="timeline-content">
+              <strong>Reducción:</strong>
+              <p>
+                Reducimos la ecuación a su mínima expresión.
+              </p>
+              <div class="formula">
+                &int; 
+                <span class="frac">
+                  <span class="top">dy</span>
+                  <span class="bottom">y</span>
+                </span>
+                = - &int; 
+                <span class="frac">
+                  <span class="top">dx</span>
+                  <span class="bottom">x</span>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Paso 5 -->
+          <div class="timeline-item">
+            <div class="timeline-icon">5</div>
+            <div class="timeline-content">
+              <strong>Integración:</strong>
+              <p>
+                Integramos del lado de las “y” y del lado de las “x” colocando solo de un lado la 
+                constante ya que como la ecuación es de orden uno, solo debemos tener una constante.
+              </p>
+              <div style="text-align: center;">
+                <div style="border: 1px solid #000; padding: 10px; display: inline-block;">
+                  lny = lnx + C
+                </div>
+              </div>              
+            </div>
+          </div>
+
+        </div> <!-- /timeline -->
+      </div>
+
+      <!-- EJERCICIO 2 -->
+      <!-- EJERCICIO 2 (Reescrito según las imágenes) -->
+      <div id="ex2" class="exercise-content">
+        <h3>Ejercicio 2: Resolver la ecuación diferencial
+          <div class="formula">
+            y<sup>2</sup>dx - xydy = x<sup>2</sup>ydy
+        </h3>
+
+        <div class="timeline">
+
+          <!-- Paso 1 -->
+          <div class="timeline-item">
+            <div class="timeline-icon">1</div>
+            <div class="timeline-content">
+              <strong>Primero observamos:</strong>
+              <p>
+                Primero observamos si la ecuación diferencial se puede hacer por el método de variables separables esto 
+                significa que tenga un producto de funciones, que no tenga suma entre las variables dependiente e independiente, 
+                y que si tiene sea porque se puede factorizar.
+              </p>
+              <p>
+                Comenzamos <em>factorizando</em> el lado izquierdo de la ecuación:
+              </p>
+              <div class="formula">
+                y(ydx - xdy) = x<sup>2</sup>ydy
+              </div>
+              <p>
+                Se observa que la variable <em>y</em> al “pasar dividiendo” puede simplificarse.
+              </p>
+              <div class="formula">
+                (ydx - xdy) = 
+                <span class="frac">
+                  <span class="top">x<sup>2</sup>ydy</span>
+                  <span class="bottom">y</span>
+                </span>
+              </div>
+              <br>
+              <div class="formula">
+                ydx - xdy = x<sup>2</sup>dy
+              </div>
+              Identificamos que podemos seguir factorizando términos. 
+            </div>
+          </div>
+
+          <!-- Paso 2 -->
+          <div class="timeline-item">
+            <div class="timeline-icon">2</div>
+            <div class="timeline-content">
+              <strong>A partir de ese paso:</strong>
+              <p>
+                En la ecuación se pueden separar los términos 
+                que tienen “y” con la diferencial de “y” y los términos que tienen “x” con la diferencial de “x”.
+              </p>
+              <div class="formula">
+                y dx = x<sup>2</sup>dy + xdy
+              </div>
+              <br>
+              <div class="formula">
+                ydx=(x<sup>2</sup>+x)dy 
+              </div>
+            </div>
+          </div>
+
+          <!-- Paso 3 -->
+          <div class="timeline-item">
+            <div class="timeline-icon">3</div>
+            <div class="timeline-content">
+              <strong>Colocamos los términos:</strong>
+              <p>
+                Colocamos los términos que tengan “x” con su diferencial “dx” y colocamos los términos que tengan “y” con su diferencial “dy”.
+              </p>
+              <div class="formula">
+                <span class="frac">
+                  <span class="top">dx</span>
+                  <span class="bottom">x<sup>2</sup> + x</span>
+                </span>
+                = 
+                <span class="frac">
+                  <span class="top">dy</span>
+                  <span class="bottom">y</span>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Paso 4 -->
+          <div class="timeline-item">
+            <div class="timeline-icon">4</div>
+            <div class="timeline-content">
+              <strong>Se integran ambos lados:</strong>
+              <p>
+                Se integra de ambos lados colocando solo de un lado la constante ya que como la ecuación es de orden uno, solo debemos tener una constante.
+              </p>
+              <div class="formula">
+                &int; 
+                <span class="frac">
+                  <span class="top">dx</span>
+                  <span class="bottom">x<sup>2</sup> + x</span>
+                </span>
+                = &int; 
+                <span class="frac">
+                  <span class="top">dy</span>
+                  <span class="bottom">y</span>
+                </span>
+              </div>
+              <br>
+              <p>
+                La integral del lado izquierdo se puede reescribir de la siguiente manera y la del lado derecho es una integral directa que resolvemos.
+              </p>
+              <div class="formula">
+                &int; 
+                <span class="frac">
+                  <span class="top">dx</span>
+                  <span class="bottom">x<sup>2</sup>(
+                    <span class="frac">
+                      <span class="top">1</span>
+                      <span class="bottom">x</span>
+                    </span> + 1)
+                  </span>
+                </span>
+                = 
+                ln(y)+C
+              </div>
+              <p>
+                Para resolver la integral con respecto a ”x” se usa cambio de variable.
+              </p>
+              <div class="formula">
+                <em>u</em> =
+                <span class="frac">
+                  <span class="top">1</span>
+                  <span class="bottom">x</span>
+                </span>
+                + 1,
+                &nbsp; d<em>u</em> = -
+                <span class="frac">
+                  <span class="top">1</span>
+                  <span class="bottom">x<sup>2</sup></span>
+                </span>
+                d<em>x</em>
+              </div>
+              <div class="formula">
+                &there4; &nbsp; - &int;
+                <span class="frac">
+                  <span class="top">1</span>
+                  <span class="bottom">u</span>
+                </span>
+                &nbsp; d<em>u</em> = ln(<em>y</em>) + <em>C</em>
+              </div>
+              <div class="formula">
+                - ln(<em>u</em>) = ln(<em>y</em>) + <em>C</em>
+              </div>
+              <div class="formula">
+                - ln
+                (
+                  <span class="frac">
+                    <span class="top">1</span>
+                    <span class="bottom">x</span>
+                  </span>
+                  + 1
+                )
+                + <em>C</em> = ln(<em>y</em>) + <em>C</em>
+              </div>
+
+              <p>
+                Se puede notar que aparece una constante para cada integral indefinida, sin embargo al sumarlas se puede reducir a una sola.
+              </p>
+              <div class="formula">
+                -ln
+                (
+                  <span class="frac">
+                    <span class="top">1</span>
+                    <span class="bottom">x</span>
+                  </span>
+                  + 1
+                )
+                = ln(y) + C
+              </div>              
+              <p>
+              Además, a la constante se puede reescribir como un logaritmo de la constante y seguir siendo constante, con el objetivo de utilizar propiedades de los logaritmos y simplificar la solución. 
+              </p>
+              <div class="formula">
+                ln 
+                  (
+                    <span class="frac">
+                      <span class="top">1</span>
+                      <span class="bottom">x</span>
+                    </span>
+                    + 1
+                  )<sup>-1</sup>
+                = ln(y) + lnC
+              </div>
+              <div class="formula">
+                ln
+                (
+                  <span class="frac">
+                    <span class="top">1</span>
+                    <span class="bottom">
+                      <span class="frac">
+                        <span class="top">1</span>
+                        <span class="bottom">x</span>
+                      </span>
+                      + 1
+                    </span>
+                  </span>
+                )
+                = ln(y) + lnC
+              </div>
+              <div class="formula">
+                ln
+                (
+                  <span class="frac">
+                    <span class="top">1</span>
+                    <span class="bottom">
+                      <span class="frac">
+                        <span class="top">1</span>
+                        <span class="bottom">x</span>
+                      </span>
+                      +
+                      <span class="frac">
+                        <span class="top">x</span>
+                        <span class="bottom">x</span>
+                      </span>
+                    </span>
+                  </span>
+                )
+                = ln(y) + lnC
+              </div>
+              <div class="formula">
+                ln
+                (
+                  <span class="frac">
+                    <span class="top">
+                      <span class="frac">
+                        <span class="top">1</span>
+                        <span class="bottom">1 + x</span>
+                      </span>
+                    </span>
+                    <span class="bottom">x</span>
+                  </span>
+                )
+                = ln(y) + lnC
+              </div>
+              <div class="formula">
+                ln
+                (
+                  <span class="frac">
+                    <span class="top">x</span>
+                    <span class="bottom">x + 1</span>
+                  </span>
+                )
+                = ln(y) + lnC
+              </div>
+              <p>
+                Se le puede aplicar exponencial a toda la ecuación.
+              </p>
+              <div class="formula">
+                e<sup>ln(
+                  <span class="frac">
+                    <span class="top">x</span>
+                    <span class="bottom">x + 1</span>
+                  </span>
+                )</sup>
+                = e<sup>ln(y) + lnC</sup>
+              </div>              
+              <p>
+                Finalmente, se obtiene la solución general a la ecuación diferencial. 
+              </p>
+              <div style="text-align: center;">
+                <div style="border: 1px solid #000; padding: 10px; display: inline-block;">
+                  <span class="frac">
+                    <span class="top">x</span>
+                    <span class="bottom">x + 1</span>
+                  </span>
+                  = y + C
+                </div>
+              </div>                           
+            </div>
+          </div>
+
+
+
+<!-- EJERCICIOS PROPUESTOS -->
+       <div id="propuestos" class="exercise-content">
+        <h3>Ejercicios Propuestos</h3>
+        <ul>
+          <!-- i) -->
+          <li>
+            <strong>i.</strong> Resuelva la ecuación diferencial:
+            <div class="formula">
+              x<sup>2</sup>
+              <span class="frac">
+                <span class="top">dy</span>
+                <span class="bottom">dx</span>
+              </span>
+              = 1 - x<sup>2</sup> + y<sup>2</sup> - x<sup>2</sup> y<sup>2</sup>
+            </div>
+          </li>
+
+          <!-- ii) -->
+          <li>
+            <strong>ii.</strong> Resuelva la ecuación diferencial:
+            <div class="formula">
+              (x + 2)(sen y)&nbsp;dx + x cos(y)&nbsp;dy = 0
+            </div>
+          </li>
+
+          <!-- iii) -->
+          <li>
+            <strong>iii.</strong> Resuelva el problema de valor inicial:
+            <div class="formula">
+              cos x&nbsp;dx + 
+              (1 + 
+                <span class="frac">
+                  <span class="top">2</span>
+                  <span class="bottom">y</span>
+                </span>
+              ) sen x&nbsp;dy = 0; &nbsp;&nbsp; y(&pi;/2) = 1
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div> <!-- /content-area -->
+  </div> <!-- /main-container -->
+
+  <script>
+    // Esta función muestra el contenido del ejercicio seleccionado y oculta los demás
+    function showExercise(exerciseId) {
+      // Oculta el contenido de bienvenida
+      document.getElementById('welcome-content').style.display = 'none';
+
+      // Obtiene todos los elementos con la clase 'exercise-content'
+      const allExercises = document.querySelectorAll('.exercise-content');
+      
+      // Los oculta todos
+      allExercises.forEach(ex => ex.style.display = 'none');
+
+      // Muestra únicamente el que se seleccionó
+      const selected = document.getElementById(exerciseId);
+      if (selected) {
+        selected.style.display = 'block';
+      }
+    }
+
+    // Detecta la página actual basándose en la URL y resalta el enlace activo
+    const links = document.querySelectorAll('nav ul li a');
+    links.forEach(link => {
+      if (link.href === window.location.href) {
+        link.classList.add('active');
+      }
+    });
+  </script>
+</body>
+</html>

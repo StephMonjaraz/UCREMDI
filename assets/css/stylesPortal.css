@@ -47,7 +47,6 @@ body {
     height: 40px; 
     transition: all 0.3s ease;
     margin-right: 40px;
-   
 }
 
 .search-button:hover {
@@ -82,6 +81,7 @@ nav ul li a {
 nav ul li a:hover {
     color: black; /* Cambio de color de blanco a negro. */
 }
+
 /* Novedades */
 main h2 {
     text-align: center; 
@@ -133,7 +133,8 @@ footer {
     width: 100%;
     height: 120px;
 }
-/* Para no agrandar los recuadros.*/
+
+/* Para no agrandar los recuadros */
 .recuadro {
     width: 100%; 
     max-width: 250px; 
@@ -148,7 +149,7 @@ footer {
     flex-direction: column;
     justify-content: space-between;
     padding: 10px;
-    overflow: hidden; /* Mod copilot */
+    overflow: hidden;
 }
 
 .img_recuadro {
@@ -168,3 +169,21 @@ footer {
     text-overflow: ellipsis;
     white-space: normal;
 }
+
+/* --- Reglas para centrar el carrusel --- */
+/* Centrar el contenedor del carrusel */
+#carrusel {
+    text-align: center;
+    margin: 10px 0;
+}
+
+/* Asegurar que el iframe se muestre como inline-block para que se centre */
+#carrusel iframe {
+    display: inline-block;
+}
+#carrusel {
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px; /* o el valor que prefieras para el margen inferior */
+}
+

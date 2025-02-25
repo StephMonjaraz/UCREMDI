@@ -1,0 +1,227 @@
+/* ********* Estilos generales de la página ********* */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+
+
+/* ********* Encabezado Principal ********* */
+.header-index {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    padding: 10px 20px;
+    background-color: #f2f2f2; 
+    height: 90px; 
+}
+
+
+/* ********* Contenedor de los logos ********* */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 30px; 
+    margin-left: 40px; 
+}
+
+.logo-container img {
+    height: 70px; /* Tamaño de los logos */
+    width: auto; 
+}
+
+
+/* ********* Botón de búsqueda ********* */
+.search-button {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    padding: 10px 20px;
+    background-color: #f2f2f2;
+    color: #C8102E;
+    border: 2px solid #C8102E;
+    border-radius: 5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-align: center;
+    width: 120px; /* Ancho del botón */
+    height: 40px; 
+    transition: all 0.3s ease;
+    margin-right: 40px;
+}
+
+.search-button:hover {
+    background-color: #C8102E;
+    color: white;
+}
+
+
+/* ********* Barra de Navegación ********* */
+nav {
+    background-color: #C8102E;
+    padding: 10px;
+    margin-bottom: 0cm !important;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: normal; /* Texto */
+    font-size: 19px; 
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: black; /* Cambio de color de blanco a negro. */
+}
+
+
+/* ********* SECCIÓN DE FICHA ********* */
+nav, .contenido-ficha {
+    display: block;
+}
+.contenido-ficha {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0px !important; 
+    max-width: 100%;
+    flex-direction: column;
+}
+
+
+/* ********* Contenedor principal ********* */
+.ficha-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    width: 100%;
+    min-height: 100px;
+    transform: scale(0.7); 
+    transform-origin: top; 
+    margin-top: 30px; 
+}
+
+
+/* ********* Bloque de imagen y tabla ********* */
+.bloque-imagen {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 20px;
+    width: 100%;
+    height: auto;
+}
+
+.ficha-imagen {
+    width: 40%;
+    max-width: 350px;
+    height: auto;
+    flex-grow: 1;
+    object-fit: cover;
+    border-radius: 10px;
+}
+ /* tabla */
+.ficha-info {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.ficha-info h2 {
+    font-size: 18px;
+    color: black;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.ficha-info p {
+    font-size: 16px;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+/* ********* Botón recurso ********* */
+.btn-recurso {
+    display: block;
+    background-color: #C8102E;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn-recurso:hover {
+    background-color: #a00d25;
+}
+
+
+/* ********* TABLAS (obj,linea) ********* */
+.ficha-tabla, .tabla-lineamientos {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border: 1px solid black;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+.ficha-tabla th, .ficha-tabla td, .tabla-lineamientos th, .tabla-lineamientos td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: left;
+}
+
+.ficha-tabla th:first-child, 
+.bloque-lineamientos th:first-child {
+    width: 1px;
+    white-space: nowrap;
+}
+
+.ficha-tabla td:nth-child(2), 
+.bloque-lineamientos td:nth-child(2) {
+    text-align: justify;
+}
+
+
+/* ********* Bloque de Lineamientos ********* */
+.bloque-lineamientos {
+    width: 100%;
+    margin-top: 10px;
+}
+
+
+/* ********* Pie de Página ********* */
+footer {
+    background-color: #C8102E;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducción - Ecuaciones Diferenciales</title>
+    <link rel="stylesheet" href="../assets/css/intro.css">
+
+   
+</head>
+
+<body>
+    <!-- Imagen representativa de ecuacoes -->
+    <img src="../assets/img/ecuaciones.jpg" alt="Ecuaciones Diferenciales" class="header-image">
+
+  
+<!-- Menú de navegación con CODDIS y Búsqueda dentro -->
+<nav>
+    <div class="nav-container">
+        <div class="logo-section">CODDIS</div>
+        <ul class="nav-menu">
+            <li><a href="../EcuacionesDiferenciales/contenido.html">Contenido</a></li>
+            <li><a href="../EcuacionesDiferenciales/actividades.html">Actividades</a></li>
+            <li><a href="../EcuacionesDiferenciales/autoevaluacion.html">Autoevaluación</a></li>
+            <li><a href="../EcuacionesDiferenciales/fuentes.html">Fuentes</a></li>
+        </ul>
+        <div class="search-button">Búsqueda</div>
+    </div>
+</nav>
+
+
+<!-- INFO DE LA PAGINA -->
+    <main>
+        <section id="informacion-general" style="padding: 20px; margin: 45px auto; max-width: 900px;">
+            <h2 style="color: #c00; border-bottom: 2px solid #c00; padding-bottom: 5px;">Información General</h2>
+            <p><strong style="color: #c00;">Asignatura:</strong> Ecuaciones Diferenciales (1325)</p>
+            <p><strong style="color: #c00;">Descripción del curso:</strong> Método de separación de variables para resolver ecuaciones diferenciales ordinarias</p>
+            <p><strong style="color: #c00;">Dirigido a:</strong> Recurso diseñado para estudiantes de (3er) semestre</p>
+            <p><strong style="color: #c00;">Autores:</strong> Evelyn Salazar Guerrero, Edgar Ali Ramos Gómez</p>
+        </section>
+    </main>
+
+    <script>
+        let currentIndex = 1; 
+        const carousel = document.getElementById('carousel');
+        const totalItems = carousel.children.length;
+        let autoScroll;
+
+        carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+        function startAutoScroll() {
+            autoScroll = setInterval(() => moveCarousel(1), 2000); // Tiempo cambio del carrusel
+        }
+
+        function moveCarousel(direction) {
+            clearInterval(autoScroll); 
+
+            currentIndex += direction;
+            carousel.style.transition = 'transform 0.4s ease'; 
+            carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+            // Bucle continuo del carrusel
+            carousel.addEventListener('transitionend', () => {
+                if (currentIndex === totalItems - 1) {
+                    carousel.style.transition = 'none';
+                    currentIndex = 1;
+                    carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+                } else if (currentIndex === 0) {
+                    carousel.style.transition = 'none';
+                    currentIndex = totalItems - 2;
+                    carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+                }
+                startAutoScroll();
+            }, { once: true });
+        }
+
+        // Desp automático
+        startAutoScroll();
+    </script>
+</body>
+</html>

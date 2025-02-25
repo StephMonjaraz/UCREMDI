@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contenido - Ecuaciones Diferenciales</title>
+  <link rel="stylesheet" href="../assets/css/menu.css">
+  <style>
+    /* Contenedor principal del contenido */
+    .content-area {
+      max-width: 850px;
+      margin: 30px auto; /* Espaciado superior para mejor apariencia */
+      padding: 20px;
+      background: #ffffff; /* Fondo blanco para que resalte */
+      border-radius: 8px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    }
+
+    /* Estilo de los títulos */
+    .content-area h2 {
+      color: #c00;
+      padding-left: 8px;
+      margin-bottom: 20px;
+    }
+
+    .content-area h3 {
+      color: #c00;
+      margin-top: 30px; /* Espaciado adicional entre secciones */
+      margin-bottom: 15px;
+      padding: 10px;
+      background: #f8f8f8; /* Fondo suave */
+      border-radius: 6px;
+      text-align: center;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    }
+
+    /* Estilo del texto */
+    .content-area p {
+      text-align: justify;
+      line-height: 1.6;
+      margin-bottom: 15px; /* Espacio entre párrafos */
+    }
+
+    /* Listas ordenadas */
+    .content-area ol {
+      margin: 15px 30px;
+      padding-left: 15px;
+    }
+
+    /* Estilos para ecuaciones */
+    .formula {
+      font-style: italic;
+      color: #222;
+      background: #f3f3f3; /* Fondo gris claro */
+      display: block;
+      margin: 20px auto;
+      text-align: center;
+      font-size: 1.2rem;
+      padding: 12px;
+      border-radius: 6px;
+      border: 1px solid #ddd;
+      width: fit-content;
+    }
+
+    /* Estilos para fracciones */
+    .frac {
+      display: inline-block;
+      text-align: center;
+      vertical-align: middle;
+      margin: 0 2px;
+    }
+    .frac .top {
+      display: block;
+      border-bottom: 1px solid #000;
+      line-height: 1;
+      padding: 0 4px;
+    }
+    .frac .bottom {
+      display: block;
+      line-height: 1;
+      padding: 0 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Barra roja superior -->
+  <div class="header-top">
+    <a href="../index.html" class="logo-button">CODDIS</a>
+    <a href="#" class="search-button">Búsqueda</a>
+  </div>
+
+  <!-- Menú de navegación -->
+  <nav>
+    <ul>
+      <li><a href="introduccion.html">Introducción</a></li>
+      <li><a href="contenido.html" class="active">Contenido</a></li>
+      <li><a href="actividades.html">Actividades</a></li>
+      <li><a href="autoevaluacion.html">Autoevaluación</a></li>
+      <li><a href="fuentes.html">Fuentes</a></li>
+    </ul>
+  </nav>
+
+  <!-- Contenido principal -->
+  <main class="content-area">
+
+    <h3>Forma de este tipo de ecuaciones diferenciales</h3>
+
+    <p>Este método se utiliza para ecuaciones diferenciales de primer orden, por lo que tendremos una primera derivada únicamente, en la cual podemos identificar un solo cociente o producto de dos funciones igualadas a una derivada.</p>
+
+    <p>Se dice que una ecuación diferencial de variables separables es aquella que tiene la forma tal que podría reescribirse separando las variables “x” y “y” mediante el símbolo de igualdad, podríamos tener lo siguiente:</p>
+
+    <!-- Ecuación en formato HTML -->
+    <div class="formula">
+      x e<sup>x+y</sup> 
+      <span class="frac">
+        <span class="top">dy</span>
+        <span class="bottom">dx</span>
+      </span>
+      + y e<sup>x+y</sup> = 0
+    </div>
+
+    <p>Se observa que la primera derivada en el primer caso está igualada a un producto de funciones en donde cada una de ellas podemos identificar por depender de una sola variable, en este caso una función f que solo depende de “x”, multiplicada por una función g que depende solo de la variable “y”. En el segundo caso, la primera derivada está asociada con un cociente de funciones, en donde de la misma forma en el numerador hay una función f que depende solo de la variable “x” y en el denominador hay una función g que depende de la variable “y”.</p>
+    
+    <h3>Pasos a seguir para resolver este tipo de ecuaciones</h3>
+
+    <ol>
+      <li>Observar si la ecuación diferencial tiene un producto o cociente de funciones en las que cada una dependa de una sola variable.</li>
+      <li>Utilizar algún método algebraico válido que permita agrupar y separar las funciones con su respectivo diferencial.</li>
+      <li>Integrar cada lado de la ecuación, incorporando una constante C arbitraria por tratarse de integrales indefinidas.</li>
+    </ol>
+
+  </main>
+
+</body>
+</html>
+

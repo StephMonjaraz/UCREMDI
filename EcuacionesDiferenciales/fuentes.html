@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contenido - Ecuaciones Diferenciales</title>
+  <link rel="stylesheet" href="../assets/css/menu.css">
+  <style>
+
+    /* ---------- CONTENEDOR PRINCIPAL ----------- */
+    .main-container {
+      padding: 20px; 
+    }
+
+    /* ---------- SECCIÓN DE REFERENCIAS ----------- */
+    .references-title {
+      color: #c00;                
+      margin-bottom: 10px;      
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    .references-list {
+      margin-left: 20px;         
+      line-height: 1.5;          
+    }
+  </style>
+</head>
+<body>
+  <!-- Barra roja superior -->
+  <div class="header-top">
+    <a href="../index.html" class="logo-button">CODDIS</a>
+    <a href="#" class="search-button">Búsqueda</a>
+  </div>
+  
+  
+
+  <!-- Menú de navegación -->
+  <nav>
+    <ul>
+      <li><a href="introduccion.html">Introducción</a></li>
+      <li><a href="contenido.html">Contenido</a></li>
+      <li><a href="actividades.html">Actividades</a></li>
+      <li><a href="autoevaluacion.html">Autoevaluación</a></li>
+      <li><a href="fuentes.html">Fuentes</a></li>
+    </ul>
+  </nav>
+
+   <!-- Contenedor principal-->
+   <div class="main-container">
+    <!-- Sección de Referencias -->
+    <h2 class="references-title">Referencias</h2>
+    <div class="references-list">
+      <p>Carmona, J.I., y Fiallo, E. (2011). <em>Ecuaciones diferenciales</em>. Editorial Pearson, México.</p>
+      <p>Zill, D. G. (2018). <em>Ecuaciones diferenciales con problemas de valores en la frontera</em>. Cengage Learning.</p>
+    </div>
+  </div> <!-- /main-container -->
+  <script>
+    // Esta función muestra el contenido del ejercicio seleccionado y oculta los demás
+    function showExercise(exerciseId) {
+      // Oculta el contenido de bienvenida
+      document.getElementById('welcome-content').style.display = 'none';
+
+      // Obtiene todos los elementos con la clase 'exercise-content'
+      const allExercises = document.querySelectorAll('.exercise-content');
+      
+      // Los oculta todos
+      allExercises.forEach(ex => ex.style.display = 'none');
+
+      // Muestra únicamente el que se seleccionó
+      const selected = document.getElementById(exerciseId);
+      if (selected) {
+        selected.style.display = 'block';
+      }
+    }
+
+    // Detecta la página actual basándose en la URL y resalta el enlace activo
+    const links = document.querySelectorAll('nav ul li a');
+    links.forEach(link => {
+      if (link.href === window.location.href) {
+        link.classList.add('active');
+      }
+    });
+  </script>
+
+</body>
+</html>
