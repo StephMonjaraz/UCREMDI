@@ -4,10 +4,44 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ficha</title>
+
+  <!-- Íconos Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Estilos personalizados -->
   <link rel="stylesheet" href="../assets/css/FIcha.css">
+
+  <style>
+    /* Barra de botones estilo moderno */
+    .icon-bar {
+      width: 100%;
+      background-color: #990000;
+      overflow: auto;
+    }
+
+    .icon-bar a {
+      float: left;
+      width: 20%;
+      text-align: center;
+      padding: 15px 0;
+      transition: all 0.3s ease;
+      color: white;
+      font-size: 16px;
+      text-decoration: none;
+    }
+
+    .icon-bar a:hover {
+      background-color: #200;
+    }
+
+    .icon-bar .active {
+      background-color: #CF010B;
+    }
+  </style>
 </head>
+
 <body>
-  <!---- Encabezado Principal -->
+  <!-- Encabezado Principal -->
   <header class="header-index">
     <div class="logo-container">
       <img src="../assets/img/EscudoFI-UNAM.png" alt="Logo FI">
@@ -17,16 +51,16 @@
     <button class="search-button">Búsqueda</button>
   </header>
 
-  <!-- Barra de Navegación -->
-  <nav>
-    <ul>
-      <li><a href="../index.html">Inicio</a></li>
-      <li><a href="#División">División</a></li>
-      <li><a href="#Asignatura">Asignatura</a></li>
-      <li><a href="#Temas">Temas</a></li>
-    </ul>
-  </nav>
-  <!-- Contenedor Principal (FIcha) -->
+  <!-- Barra de Navegación Moderna -->
+  <div class="icon-bar">
+    <a class="active" href="../index.html"><i class="fa fa-home"></i> Inicio</a>
+    <a href="#"><i class="fa fa-envelope"></i> División</a>
+    <a href="#"><i class="fa fa-globe"></i> Asignatura</a>
+    <a href="#"><i class="fa fa-trash"></i> Temas</a>
+    <a href="#"><i class="fa fa-search"></i> Otro</a>
+  </div>
+
+  <!-- Contenedor Principal (Ficha) -->
   <main class="contenido-ficha">
     <section class="ficha-container">
       <!-- Bloque de Imagen + Tabla de Información -->
@@ -39,8 +73,10 @@
             laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
             voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
             proident, sunt in culpa qui officia deserunt mollit anim id est laborum.”</p>
+
           <!-- Botón de recurso -->
           <a href="introduccion.html" class="btn-recurso">Ver recurso</a>
+
           <!-- Tabla de Información -->
           <table class="ficha-tabla">
             <tr>
@@ -79,7 +115,6 @@
           </tr>
         </table>
       </div>
-      
     </section>
   </main>
 

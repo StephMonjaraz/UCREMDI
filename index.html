@@ -4,9 +4,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Página Educativa</title>
+
+  <!-- Íconos Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Estilos personalizados -->
   <link rel="stylesheet" href="assets/css/stylesPortal.css">
-  <!-- No se cargan dependencias de Bootstrap aquí, ya que el carrusel se carga en su propio documento -->
+
+  <style>
+    /* Barra de botones estilo moderno */
+    .icon-bar {
+      width: 100%;
+      background-color: #990000;
+      overflow: auto;
+    }
+
+    .icon-bar a {
+      float: left;
+      width: 20%;
+      text-align: center;
+      padding: 15px 0;
+      transition: all 0.3s ease;
+      color: white;
+      font-size: 16px;
+      text-decoration: none;
+    }
+
+    .icon-bar a:hover {
+      background-color: #200;
+    }
+
+    .icon-bar .active {
+      background-color: #CF010B;
+    }
+  </style>
 </head>
+
 <body>
   <!-- Encabezado Principal -->
   <header class="header-index">
@@ -20,19 +53,17 @@
     <button class="search-button">Búsqueda</button>
   </header>
 
-  <!-- Barra de Navegación -->
-  <nav>
-    <ul>
-      <li><a href="#Inicio">Inicio</a></li>
-      <li><a href="#División">División</a></li>
-      <li><a href="#Asignatura">Asignatura</a></li>
-      <li><a href="#Temas">Temas</a></li>
-    </ul>
-  </nav>
+  <!-- Barra de Navegación Moderna -->
+  <div class="icon-bar">
+    <a class="active" href="#"><i class="fa fa-home"></i> Inicio</a>
+    <a href="#"><i class="fa fa-envelope"></i> División</a>
+    <a href="#"><i class="fa fa-globe"></i> Asignatura</a>
+    <a href="#"><i class="fa fa-trash"></i> Temas</a>
+    <a href="#"><i class="fa fa-search"></i> Otro</a>
+  </div>
 
   <!-- Sección del Carrusel (integrado mediante iframe) -->
   <section id="carrusel">
-    <!-- El iframe ahora tiene 700px de ancho y 500px de alto para coincidir con carousel.html -->
     <iframe src="EcuacionesDiferenciales/Additional/carousel.html" width="1100" height="415" frameborder="0" scrolling="no"></iframe>
   </section>
 
@@ -44,6 +75,7 @@
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, dolor. Omnis praesentium dolore voluptatibus corporis ipsa itaque sit nihil sunt repellat. Est recusandae eaque quaerat accusantium. Dignissimos deleniti quis dolor! <br>
       </p>
     </section>
+
     <h2>Novedades</h2>
     <section>
       <div class="contenedor-recuadros">
@@ -72,6 +104,7 @@
           <p>Contenido descriptivo para el recuadro 4.</p>
         </div>
       </div>
+
       <div class="contenedor-recuadros">
         <div class="recuadro">
           <a href="#"><img class="img_recuadro" src="assets/img/curso5.jpg" alt="Curso 5"></a>
@@ -103,4 +136,3 @@
   </footer>
 </body>
 </html>
-
