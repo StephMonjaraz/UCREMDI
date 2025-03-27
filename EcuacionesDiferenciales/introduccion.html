@@ -4,35 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Introducción - Ecuaciones Diferenciales</title>
-    <link rel="stylesheet" href="../assets/css/intro.css">
+    <link rel="stylesheet" href="../assets/css/menu.css">
+    <link rel="stylesheet" href="../assets/css/intro.css">  <!-- Agregado el CSS de introduccion.css -->
 </head>
 
 <body>
-    <!-- Imagen representativa de ecuaciones -->
+    <!-- Imagen representativa de ecuaciones (ahora arriba del menú) -->
     <img src="../assets/img/ecuaciones.jpg" alt="Ecuaciones Diferenciales" class="header-image">
 
-    <!-- Menú de navegación con CODDIS y Búsqueda dentro -->
+    <!-- Barra roja superior -->
+    <div class="header-top">
+        <a href="../index.html" class="logo-button">CODDIS</a>
+        <a href="#" class="search-button">Búsqueda</a>
+    </div>
+
+    <!-- Menú de navegación -->
     <nav>
-        <div class="nav-container">
-            <div class="logo-section">CODDIS</div>
-            <ul class="nav-menu">
-                <li><a href="../EcuacionesDiferenciales/contenido.html">Contenido</a></li>
-                <li><a href="../EcuacionesDiferenciales/actividades.html">Actividades</a></li>
-                <li><a href="../EcuacionesDiferenciales/autoevaluacion.html">Autoevaluación</a></li>
-                <li><a href="../EcuacionesDiferenciales/fuentes.html">Fuentes</a></li>
-            </ul>
-            <div class="search-button">Búsqueda</div>
-        </div>
+        <ul>
+            <li><a href="introduccion.html" class="active">Introducción</a></li>
+            <li><a href="contenido.html">Contenido</a></li>
+            <li><a href="actividades.html">Actividades</a></li>
+            <li><a href="autoevaluacion.html">Autoevaluación</a></li>
+            <li><a href="fuentes.html">Fuentes</a></li>
+        </ul>
     </nav>
 
-    <!-- Nueva sección con el texto sobre el método de separación de variables -->
+    <!-- Sección con el texto sobre el método de separación de variables -->
     <main>
         <section id="introduccion" style="padding: 20px; margin: 45px auto; max-width: 900px;">
             <h2 style="color: #c00; border-bottom: 2px solid #c00; padding-bottom: 5px;">Método de Separación de Variables</h2>
             <p>El método de separación de variables es una técnica fundamental en el estudio de las ecuaciones diferenciales ordinarias. Este método se utiliza para resolver ecuaciones en las que las variables algebraicamente pueden separarse. Al reorganizar la ecuación diferencial de manera que cada variable y su diferencial correspondiente estén en lados opuestos, se pueden integrar ambos lados de forma independiente. Esto permite obtener una solución general para la ecuación diferencial, facilitando la comprensión y resolución de problemas en diversas áreas de la ciencia y la ingeniería.</p>
         </section>
     </main>
-    
-
 </body>
 </html>
