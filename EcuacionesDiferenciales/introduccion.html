@@ -1,81 +1,1047 @@
 <!DOCTYPE html>
 <html lang="es">
-<head> 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Introducción - Ecuaciones Diferenciales</title>
-    <link rel="stylesheet" href="../assets/css/intro.css">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introducción - Ecuaciones Diferenciales</title>
 
-   
+  <link rel="stylesheet" href="../assets/css/menu.css">
+  <link rel="stylesheet" href="../assets/css/intro.css">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+  <!-- Habilitar scroll suave -->
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    /*--------------------------------------------------------------------------------------------------*/
+    /*--------------------------------------------------------------------------------------------------*/
+    /*-------------------------------------------INICIO CONTENIDO---------------------------------------*/
+    /* Contenedor principal del contenido */
+    .content-area {
+      max-width: 1500px;
+      /*height: 8000px;*/
+      margin: 30px; /* Espaciado superior para mejor apariencia */
+      padding: 20px;
+      background: #ffffff; /* Fondo blanco para que resalte */
+      border-radius: 8px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);  /*Sombra sutil */
+    }
+
+    /* Estilo de los títulos */
+    .content-area h2 {
+      color: #c00;
+      padding-left: 8px;
+      margin-bottom: 20px;
+      text-align: center;
+      border-bottom: 2px solid #c00
+    }
+
+    .content-area h3 {
+      color: black;
+      margin-top: 30px; /* Espaciado adicional entre secciones */
+      margin-bottom: 15px;
+      padding: 10px;
+      /* background: #f8f8f8; Fondo suave */
+      /*border-radius: 6px;*/
+      text-align: center;
+      /*box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);  Sombra ligera */
+    }
+
+    /* Estilo del texto */
+    .content-area p {
+      text-align: justify;
+      line-height: 1.6;
+      margin-bottom: 15px; /* Espacio entre párrafos */
+    }
+    
+    /* Estilos para la tablet y el video embebido */
+    .tablet-container {
+        position: relative;
+        max-width: 5000px;
+        width: 100%;
+        margin: 5px auto;
+        height: 600px; /* o la que necesites */
+    }
+
+    .tablet-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;          /* La imagen ocupa todo el ancho del contenedor */
+      display: block;
+      pointer-events: none; 
+      z-index: 2;
+    }
+
+    .tablet-screen {
+      position: absolute;  
+      top: 92px;            
+      left: 230px;          
+      width: 700px;         
+      height: 390px;        
+      border: none;   
+      z-index: 1; 
+    }
+    /*--------------------------------------------------------------------------------------------------*/
+    /*--------------------------------------------------------------------------------------------------*/
+    /*-------------------------------------------INICIO ACTIVIDADES-------------------------------------*/
+    .main-container2 {
+      display: flex; /* Para dividir en dos columnas: aside y contenido */
+      min-height: calc(100vh - 130px); /* Altura mínima para pantalla completa (resta header + nav) */
+    }
+    /* ---------- BARRA LATERAL IZQUIERDA (LISTA DE EJERCICIOS) ----------- */
+    aside.sidebar {
+      width: 300px;
+      background-color: #f5f5f5;
+      border-right: 1px solid #ccc;
+      padding: 20px;
+    }
+    aside.sidebar h2 {
+      color: #c00;
+      margin-bottom: 15px;
+    }
+    aside.sidebar ul {
+      list-style: none;
+    }
+    aside.sidebar li {
+      margin-bottom: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      color: #c00;
+    }
+    aside.sidebar li:hover {
+      color: #900;
+      text-decoration: underline;
+    }
+    /* ---------- SECCIÓN DE CONTENIDO A LA DERECHA ----------- */
+    .content-area2 {
+      flex: 1; /* Toma el espacio restante */
+      padding: 20px;
+    }
+    .content-area2 h3 {
+      color: #c00;
+      margin-bottom: 10px;
+      border-left: 4px solid #c00;
+      padding-left: 8px;
+    }
+    .content-area2 h4 {
+      color: #c00;
+      margin: 15px 0 10px;
+    }
+    .content-area2 p,
+    .content-area2 li {
+      margin: 10px 0;
+      text-align: justify;
+      line-height: 1.5;
+    }
+    .content-area2 ol, .content-area2 ul {
+      margin: 10px 30px;
+    }
+    /* Ocultamos las secciones de ejercicio por defecto */
+    .exercise-content {
+      display: none;
+    }
+    /* ---------- SECCIÓN DE BIENVENIDA (SIN EJERCICIO SELECCIONADO) ----------- */
+    .welcome-content {
+      text-align: center;
+    }
+    .welcome-content img {
+      max-width: 60%;
+      height: auto;
+      border: 2px solid #c00;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    .welcome-content p {
+      font-size: 1.1rem;
+      color: #666;
+    }
+
+    /* ---------- TIMELINE (LÍNEA DE TIEMPO) PARA PASOS ----------- */
+    .timeline {
+      position: relative;
+      margin: 20px 0;
+      padding: 0;
+    }
+    /* Línea vertical */
+    .timeline:before {
+      content: "";
+      position: absolute;
+      left: 60px; /* Mueve la línea más a la derecha */
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: #c00;
+      border-radius: 2px;
+    }
+    .timeline-item {
+      position: relative;
+      margin-left: 120px; /* Separa el texto de la línea */
+      margin-bottom: 40px;
+      min-height: 50px;
+    }
+    .timeline-icon {
+      position: absolute;
+      left: -50px;
+      top: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #c00;
+      color: #fff;
+      text-align: center;
+      line-height: 40px;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+    .timeline-content {
+      background: #f9f9f9;
+      padding: 15px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    .timeline-content strong {
+      color: #900;
+    }
+    .timeline-content p {
+      margin: 10px 0 0;
+    }
+    .formula {
+      font-style: italic;
+      color: #444;
+      display: block;
+      margin: 10px 0;
+      text-align: center;
+    }
+
+    /* ---------- CLASES PARA FRACCIONES VERTICALES ----------- */
+    .frac {
+      display: inline-block;
+      text-align: center;
+      vertical-align: middle;
+      margin: 0 2px;
+    }
+    .frac .top {
+      display: block;
+      border-bottom: 1px solid #000;
+      line-height: 1;
+      padding: 0 4px;
+    }
+    .frac .bottom {
+      display: block;
+      line-height: 1;
+      padding: 0 4px;
+    }
+    /*--------------------------------------------------------------------------------------------------*/
+    /*--------------------------------------------------------------------------------------------------*/
+    /*---------------------------------------------AUTOEVALUACION----------------------------------------*/
+    /* Estilos para preguntas */
+    .question {
+      font-weight: bold;
+      color: #900;
+      margin-top: 20px;
+    }
+
+    /* Opciones del cuestionario */
+    .options label {
+      display: block;
+      margin: 5px 0;
+      padding: 8px;
+      border-radius: 6px;
+      cursor: pointer;
+      background: #f3f3f3;
+      transition: 0.3s;
+    }
+
+    .options label:hover {
+      background: #e3e3e3;
+    }
+
+    /* Botón para enviar respuestas */
+    .submit-btn {
+      margin-top: 20px;
+      padding: 10px 15px;
+      background: #c00;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .submit-btn:hover {
+      background: #900;
+    }
+    /*--------------------------------------------------------------------------------------------------*/
+    /*--------------------------------------------------------------------------------------------------*/
+    /*----------------------------------------------REFERENCIAS-----------------------------------------*/
+    .result {
+      margin-top: 20px;
+      padding: 10px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-align: center;
+      background: #f8f8f8;
+      border-radius: 6px;
+      display: none;
+    }
+
+    .references-title {
+      color: #c00;                
+      margin-bottom: 10px;      
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    .references-list {
+      margin-left: 20px;         
+      line-height: 1.5;
+    }
+  </style>
+   <!-- MathJax para renderizar ecuaciones matemáticas -->
+   <script type="text/javascript" async
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+ </script>
 </head>
 
 <body>
-    <!-- Imagen representativa de ecuacoes -->
-    <img src="../assets/img/ecuaciones.jpg" alt="Ecuaciones Diferenciales" class="header-image">
 
-  
-<!-- Menú de navegación con CODDIS y Búsqueda dentro -->
-<nav>
-    <div class="nav-container">
-        <div class="logo-section">CODDIS</div>
-        <ul class="nav-menu">
-            <li><a href="../EcuacionesDiferenciales/contenido.html">Contenido</a></li>
-            <li><a href="../EcuacionesDiferenciales/actividades.html">Actividades</a></li>
-            <li><a href="../EcuacionesDiferenciales/autoevaluacion.html">Autoevaluación</a></li>
-            <li><a href="../EcuacionesDiferenciales/fuentes.html">Fuentes</a></li>
-        </ul>
-        <div class="search-button">Búsqueda</div>
+  <!-- Imagen de cabecera -->
+  <img src="../assets/img/ecuaciones.jpg"
+       alt="Ecuaciones Diferenciales"
+       class="header-image">
+       
+  <!-- Barra roja superior-->
+  <div class="header-top">
+    <a href="../index.html" class="logo-button">CODDIS</a>
+    <a href="#" class="search-button">Búsqueda</a>
+  </div>
+
+  <!-- NAVBAR de Bootstrap -->
+  <nav class="navbar navbar-expand-md navbar-light bg-light">
+    <!-- Botón para el menú  -->
+    <button class="navbar-toggler" type="button"
+            data-toggle="collapse" data-target="#collapsibleNavbar"
+            aria-controls="collapsibleNavbar"
+            aria-expanded="false" aria-label="Toggle navigation">
+      <!-- pendiente agregar la clase 'navbar-toggler-icon' y un icono. -->
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Contenedor -->
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav ml-auto">
+        <!-- Secciones, con esto hacemos lo del paralaje -->
+        <li class="nav-item">
+          <a class="nav-link" href="#introduccion">Introducción</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contenido">Contenido</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#actividades">Actividades</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#autoevaluacion">Autoevaluación</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#fuentes">Fuentes</a>
+        </li>
+      </ul>
     </div>
-</nav>
+  </nav>
 
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="content-area">
+    <!-- Sección Introducción -->
+    <section id="introduccion" class="container py-5">
+      <h2 style="color: #c00; border-bottom: 2px solid #c00; padding-bottom: 5px;">
+        Método de Separación de Variables
+      </h2>
+      <p>
+        El método de separación de variables es una técnica fundamental en el estudio de
+        las ecuaciones diferenciales ordinarias. Este método se utiliza para resolver
+        ecuaciones en las que las variables algebraicamente pueden separarse. Al reorganizar
+        la ecuación diferencial de manera que cada variable y su diferencial correspondiente
+        estén en lados opuestos, se pueden integrar ambos lados de forma independiente. Esto
+        permite obtener una solución general para la ecuación diferencial, facilitando la
+        comprensión y resolución de problemas en diversas áreas de la ciencia y la ingeniería.
+      </p>
+    </section>
 
-<!-- INFO DE LA PAGINA -->
-    <main>
-        <section id="informacion-general" style="padding: 20px; margin: 45px auto; max-width: 900px;">
-            <h2 style="color: #c00; border-bottom: 2px solid #c00; padding-bottom: 5px;">Información General</h2>
-            <p><strong style="color: #c00;">Asignatura:</strong> Ecuaciones Diferenciales (1325)</p>
-            <p><strong style="color: #c00;">Descripción del curso:</strong> Método de separación de variables para resolver ecuaciones diferenciales ordinarias</p>
-            <p><strong style="color: #c00;">Dirigido a:</strong> Recurso diseñado para estudiantes de (3er) semestre</p>
-            <p><strong style="color: #c00;">Autores:</strong> Evelyn Salazar Guerrero, Edgar Ali Ramos Gómez</p>
-        </section>
-    </main>
+    <!-- Sección Contenido -->
+    <section id="contenido" class="container py-5">
+            <h2>Ecuaciones diferenciales de variables separables</h2>
+            <p>Método utilizado para resolver ecuaciones en las cuales las variables pueden separarse algebraicamente</p>
+            <div class="tablet-container">
+                <!-- Imagen de las manos con la tablet -->
+                <img src="../assets/img/manos.png" alt="Manos sosteniendo la tablet" class="tablet-image">
+                
+                <!-- Video embebido -->
+                <iframe class="tablet-screen"
+                        src="https://www.youtube.com/embed/8VGgHcOO8TM?si=aDB6h_kL7QfySjkA" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+    </section>
 
-    <script>
-        let currentIndex = 1; 
-        const carousel = document.getElementById('carousel');
-        const totalItems = carousel.children.length;
-        let autoScroll;
+    <!-- Sección Actividades -->
+    <section id="actividades" class="container py-5">
+        <h2>Actividades</h2>
+        <div class="main-container2">
+    
+            <!-- Barra lateral con la lista de ejercicios -->
+            <aside class="sidebar">
+              <h2>Ejercicios</h2>
+              <ul>
+                <li onclick="showExercise('ex1')">Ejercicio 1</li>
+                <li onclick="showExercise('ex2')">Ejercicio 2</li>
+                <li onclick="showExercise('propuestos')">Ejercicios Propuestos</li>
+              </ul>
+            </aside>
+        
+            <!-- Área de contenido (lado derecho) -->
+            <div class="content-area2">
+        
+              <!-- Contenido de bienvenida por defecto (si no se selecciona nada) -->
+              <div id="welcome-content" class="welcome-content">
+                <img src="https://www.gaceta.unam.mx/wp-content/uploads/2019/02/190211-Gob1-des-f1-facultad-ingenieria.jpg" alt="Imagen de Bienvenida">
+                <p>Selecciona un ejercicio en la barra lateral para ver su contenido.</p>
+              </div>
+        
+              <!-- EJERCICIO 1 -->
+              <div id="ex1" class="exercise-content">
+                <h3>Ejercicio 1: Resolver la ecuación diferencial 
+                  <div class="formula">
+                    x e<sup>x+y</sup> 
+                    <span class="frac">
+                      <span class="top">dy</span>
+                      <span class="bottom">dx</span>
+                    </span>
+                    + y e<sup>x+y</sup> = 0
+                  </div>
+                </h3>
+        
+                <!-- LÍNEA DE TIEMPO PARA LOS PASOS -->
+                <div class="timeline">
+        
+                  <!-- Paso 1 -->
+                  <div class="timeline-item">
+                    <div class="timeline-icon">1</div>
+                    <div class="timeline-content">
+                      <strong>Primero observamos:</strong>
+                      <p>
+                        Primero observamos si la ecuación diferencial se puede hacer por el método de variables separables; 
+                        esto significa que tenga un producto de funciones, que no tenga suma entre las variables dependiente 
+                        e independiente, y que si tiene sea porque se puede factorizar.
+                      </p>
+                      <div class="formula">
+                        x e<sup>x+y</sup> 
+                        <span class="frac">
+                          <span class="top">dy</span>
+                          <span class="bottom">dx</span>
+                        </span>
+                        + y e<sup>x+y</sup> = 0
+                      </div>
+                    </div>
+                  </div>
+        
+                  <!-- Paso 2 -->
+                  <div class="timeline-item">
+                    <div class="timeline-icon">2</div>
+                    <div class="timeline-content">
+                      <strong>Observamos que hay una suma de variables:</strong>
+                      <p>
+                        Observamos que hay una suma de variables en el argumento de 
+                        la función exponencial; sin embargo, esta suma puede separarse aplicando 
+                        propiedades adecuadas, como se observa a continuación:
+                      </p>
+                      <div class="formula">
+                        x e<sup>x</sup> e<sup>y</sup> 
+                        <span class="frac">
+                          <span class="top">dy</span>
+                          <span class="bottom">dx</span>
+                        </span>
+                        = y e<sup>x</sup> e<sup>y</sup> 
+                        <span class="frac">
+                          <span class="top">dx</span>
+                          <span class="bottom">dy</span> <!-- <--- Este no se menciona en el original, revisa si es un error -->
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+        
+                  <!-- Paso 3 -->
+                  <div class="timeline-item">
+                    <div class="timeline-icon">3</div>
+                    <div class="timeline-content">
+                      <strong>Reescritura:</strong>
+                      <p>
+                        Reescribiendo la ecuación diferencial vemos que la ecuación se puede separar para que los términos que tienen “y” se agrupen 
+                        con la diferencial de 
+                        <span class="frac">
+                          <span class="top">dy</span>
+                          <span class="bottom">dx</span>
+                        </span>
+                        y los términos que tienen “x” se agrupen con la diferencial de 
+                        <span class="frac">
+                          <span class="top">dx</span>
+                          <span class="bottom">dy</span>
+                        </span>,
+                        procurando que las funciones y sus diferenciales queden separadas por el símbolo de igualdad
+                      </p>
+                      <div class="formula">
+                        e<sup>y</sup> / y e<sup>y</sup> 
+                        <span class="frac">
+                          <span class="top">dy</span>
+                          <span class="bottom">dx</span>
+                        </span>
+                        = e<sup>x</sup> / x e<sup>x</sup> 
+                        <span class="frac">
+                          <span class="top">dx</span>
+                          <span class="bottom">dy</span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+        
+                  <!-- Paso 4 -->
+                  <div class="timeline-item">
+                    <div class="timeline-icon">4</div>
+                    <div class="timeline-content">
+                      <strong>Reducción:</strong>
+                      <p>
+                        Reducimos la ecuación a su mínima expresión.
+                      </p>
+                      <div class="formula">
+                        &int; 
+                        <span class="frac">
+                          <span class="top">dy</span>
+                          <span class="bottom">y</span>
+                        </span>
+                        = - &int; 
+                        <span class="frac">
+                          <span class="top">dx</span>
+                          <span class="bottom">x</span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+        
+                  <!-- Paso 5 -->
+                  <div class="timeline-item">
+                    <div class="timeline-icon">5</div>
+                    <div class="timeline-content">
+                      <strong>Integración:</strong>
+                      <p>
+                        Integramos del lado de las “y” y del lado de las “x” colocando solo de un lado la 
+                        constante ya que como la ecuación es de orden uno, solo debemos tener una constante.
+                      </p>
+                      <div style="text-align: center;">
+                        <div style="border: 1px solid #000; padding: 10px; display: inline-block;">
+                          lny = lnx + C
+                        </div>
+                      </div>              
+                    </div>
+                  </div>
+        
+                </div> <!-- /timeline -->
+              </div>
+        
+              <!-- EJERCICIO 2 -->
+              <div id="ex2" class="exercise-content">
+                <h3>Ejercicio 2: Resolver la ecuación diferencial
+                  <div class="formula">
+                    y<sup>2</sup>dx - xydy = x<sup>2</sup>ydy
+                </h3>
+        
+                <div class="timeline">
+        
+                  <!-- Paso 1 -->
+                  <div class="timeline-item">
+                    <div class="timeline-icon">1</div>
+                    <div class="timeline-content">
+                      <strong>Primero observamos:</strong>
+                      <p>
+                        Primero observamos si la ecuación diferencial se puede hacer por el método de variables separables esto 
+                        significa que tenga un producto de funciones, que no tenga suma entre las variables dependiente e independiente, 
+                        y que si tiene sea porque se puede factorizar.
+                      </p>
+                      <p>
+                        Comenzamos <em>factorizando</em> el lado izquierdo de la ecuación:
+                      </p>
+                      <div class="formula">
+                        y(ydx - xdy) = x<sup>2</sup>ydy
+                      </div>
+                      <p>
+                        Se observa que la variable <em>y</em> al “pasar dividiendo” puede simplificarse.
+                      </p>
+                      <div class="formula">
+                        (ydx - xdy) = 
+                        <span class="frac">
+                          <span class="top">x<sup>2</sup>ydy</span>
+                          <span class="bottom">y</span>
+                        </span>
+                      </div>
+                      <br>
+                      <div class="formula">
+                        ydx - xdy = x<sup>2</sup>dy
+                      </div>
+                      Identificamos que podemos seguir factorizando términos. 
+                    </div>
+                  </div>
+        
+                  <!-- Paso 2 -->
+                  <div class="timeline-item">
+                    <div class="timeline-icon">2</div>
+                    <div class="timeline-content">
+                      <strong>A partir de ese paso:</strong>
+                      <p>
+                        En la ecuación se pueden separar los términos 
+                        que tienen “y” con la diferencial de “y” y los términos que tienen “x” con la diferencial de “x”.
+                      </p>
+                      <div class="formula">
+                        y dx = x<sup>2</sup>dy + xdy
+                      </div>
+                      <br>
+                      <div class="formula">
+                        ydx=(x<sup>2</sup>+x)dy 
+                      </div>
+                    </div>
+                  </div>
+        
+                  <!-- Paso 3 -->
+                  <div class="timeline-item">
+                    <div class="timeline-icon">3</div>
+                    <div class="timeline-content">
+                      <strong>Colocamos los términos:</strong>
+                      <p>
+                        Colocamos los términos que tengan “x” con su diferencial “dx” y colocamos los términos que tengan “y” con su diferencial “dy”.
+                      </p>
+                      <div class="formula">
+                        <span class="frac">
+                          <span class="top">dx</span>
+                          <span class="bottom">x<sup>2</sup> + x</span>
+                        </span>
+                        = 
+                        <span class="frac">
+                          <span class="top">dy</span>
+                          <span class="bottom">y</span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+        
+                  <!-- Paso 4 -->
+                  <div class="timeline-item">
+                    <div class="timeline-icon">4</div>
+                    <div class="timeline-content">
+                      <strong>Se integran ambos lados:</strong>
+                      <p>
+                        Se integra de ambos lados colocando solo de un lado la constante ya que como la ecuación es de orden uno, solo debemos tener una constante.
+                      </p>
+                      <div class="formula">
+                        &int; 
+                        <span class="frac">
+                          <span class="top">dx</span>
+                          <span class="bottom">x<sup>2</sup> + x</span>
+                        </span>
+                        = &int; 
+                        <span class="frac">
+                          <span class="top">dy</span>
+                          <span class="bottom">y</span>
+                        </span>
+                      </div>
+                      <br>
+                      <p>
+                        La integral del lado izquierdo se puede reescribir de la siguiente manera y la del lado derecho es una integral directa que resolvemos.
+                      </p>
+                      <div class="formula">
+                        &int; 
+                        <span class="frac">
+                          <span class="top">dx</span>
+                          <span class="bottom">x<sup>2</sup>(
+                            <span class="frac">
+                              <span class="top">1</span>
+                              <span class="bottom">x</span>
+                            </span> + 1)
+                          </span>
+                        </span>
+                        = 
+                        ln(y)+C
+                      </div>
+                      <p>
+                        Para resolver la integral con respecto a ”x” se usa cambio de variable.
+                      </p>
+                      <div class="formula">
+                        <em>u</em> =
+                        <span class="frac">
+                          <span class="top">1</span>
+                          <span class="bottom">x</span>
+                        </span>
+                        + 1,
+                        &nbsp; d<em>u</em> = -
+                        <span class="frac">
+                          <span class="top">1</span>
+                          <span class="bottom">x<sup>2</sup></span>
+                        </span>
+                        d<em>x</em>
+                      </div>
+                      <div class="formula">
+                        &there4; &nbsp; - &int;
+                        <span class="frac">
+                          <span class="top">1</span>
+                          <span class="bottom">u</span>
+                        </span>
+                        &nbsp; d<em>u</em> = ln(<em>y</em>) + <em>C</em>
+                      </div>
+                      <div class="formula">
+                        - ln(<em>u</em>) = ln(<em>y</em>) + <em>C</em>
+                      </div>
+                      <div class="formula">
+                        - ln
+                        (
+                          <span class="frac">
+                            <span class="top">1</span>
+                            <span class="bottom">x</span>
+                          </span>
+                          + 1
+                        )
+                        + <em>C</em> = ln(<em>y</em>) + <em>C</em>
+                      </div>
+        
+                      <p>
+                        Se puede notar que aparece una constante para cada integral indefinida, sin embargo al sumarlas se puede reducir a una sola.
+                      </p>
+                      <div class="formula">
+                        -ln
+                        (
+                          <span class="frac">
+                            <span class="top">1</span>
+                            <span class="bottom">x</span>
+                          </span>
+                          + 1
+                        )
+                        = ln(y) + C
+                      </div>              
+                      <p>
+                      Además, a la constante se puede reescribir como un logaritmo de la constante y seguir siendo constante, con el objetivo de utilizar propiedades de los logaritmos y simplificar la solución. 
+                      </p>
+                      <div class="formula">
+                        ln 
+                          (
+                            <span class="frac">
+                              <span class="top">1</span>
+                              <span class="bottom">x</span>
+                            </span>
+                            + 1
+                          )<sup>-1</sup>
+                        = ln(y) + lnC
+                      </div>
+                      <div class="formula">
+                        ln
+                        (
+                          <span class="frac">
+                            <span class="top">1</span>
+                            <span class="bottom">
+                              <span class="frac">
+                                <span class="top">1</span>
+                                <span class="bottom">x</span>
+                              </span>
+                              + 1
+                            </span>
+                          </span>
+                        )
+                        = ln(y) + lnC
+                      </div>
+                      <div class="formula">
+                        ln
+                        (
+                          <span class="frac">
+                            <span class="top">1</span>
+                            <span class="bottom">
+                              <span class="frac">
+                                <span class="top">1</span>
+                                <span class="bottom">x</span>
+                              </span>
+                              +
+                              <span class="frac">
+                                <span class="top">x</span>
+                                <span class="bottom">x</span>
+                              </span>
+                            </span>
+                          </span>
+                        )
+                        = ln(y) + lnC
+                      </div>
+                      <div class="formula">
+                        ln
+                        (
+                          <span class="frac">
+                            <span class="top">
+                              <span class="frac">
+                                <span class="top">1</span>
+                                <span class="bottom">1 + x</span>
+                              </span>
+                            </span>
+                            <span class="bottom">x</span>
+                          </span>
+                        )
+                        = ln(y) + lnC
+                      </div>
+                      <div class="formula">
+                        ln
+                        (
+                          <span class="frac">
+                            <span class="top">x</span>
+                            <span class="bottom">x + 1</span>
+                          </span>
+                        )
+                        = ln(y) + lnC
+                      </div>
+                      <p>
+                        Se le puede aplicar exponencial a toda la ecuación.
+                      </p>
+                      <div class="formula">
+                        e<sup>ln(
+                          <span class="frac">
+                            <span class="top">x</span>
+                            <span class="bottom">x + 1</span>
+                          </span>
+                        )</sup>
+                        = e<sup>ln(y) + lnC</sup>
+                      </div>              
+                      <p>
+                        Finalmente, se obtiene la solución general a la ecuación diferencial. 
+                      </p>
+                      <div style="text-align: center;">
+                        <div style="border: 1px solid #000; padding: 10px; display: inline-block;">
+                          <span class="frac">
+                            <span class="top">x</span>
+                            <span class="bottom">x + 1</span>
+                          </span>
+                          = y + C
+                        </div>
+                      </div>                           
+                    </div>
+                  </div>
 
-        carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+        <!-- EJERCICIOS PROPUESTOS -->
+               <div id="propuestos" class="exercise-content">
+                <h3>Ejercicios Propuestos</h3>
+                <ul>
+                  <!-- i) -->
+                  <li>
+                    <strong>i.</strong> Resuelva la ecuación diferencial:
+                    <div class="formula">
+                      x<sup>2</sup>
+                      <span class="frac">
+                        <span class="top">dy</span>
+                        <span class="bottom">dx</span>
+                      </span>
+                      = 1 - x<sup>2</sup> + y<sup>2</sup> - x<sup>2</sup> y<sup>2</sup>
+                    </div>
+                  </li>
+        
+                  <!-- ii) -->
+                  <li>
+                    <strong>ii.</strong> Resuelva la ecuación diferencial:
+                    <div class="formula">
+                      (x + 2)(sen y)&nbsp;dx + x cos(y)&nbsp;dy = 0
+                    </div>
+                  </li>
+        
+                  <!-- iii) -->
+                  <li>
+                    <strong>iii.</strong> Resuelva el problema de valor inicial:
+                    <div class="formula">
+                      cos x&nbsp;dx + 
+                      (1 + 
+                        <span class="frac">
+                          <span class="top">2</span>
+                          <span class="bottom">y</span>
+                        </span>
+                      ) sen x&nbsp;dy = 0; &nbsp;&nbsp; y(&pi;/2) = 1
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div> <!-- /content-area -->
+          </div> <!-- /main-container -->
+        
+          <script>
+            // Esta función muestra el contenido del ejercicio seleccionado y oculta los demás
+            function showExercise(exerciseId) {
+              // Oculta el contenido de bienvenida
+              document.getElementById('welcome-content').style.display = 'none';
+        
+              // Obtiene todos los elementos con la clase 'exercise-content'
+              const allExercises = document.querySelectorAll('.exercise-content');
+              
+              // Los oculta todos
+              allExercises.forEach(ex => ex.style.display = 'none');
+        
+              // Muestra únicamente el que se seleccionó
+              const selected = document.getElementById(exerciseId);
+              if (selected) {
+                selected.style.display = 'block';
+              }
+            }
+          </script>
+    </section>
 
-        function startAutoScroll() {
-            autoScroll = setInterval(() => moveCarousel(1), 2000); // Tiempo cambio del carrusel
+    <!-- Sección Autoevaluación -->
+    <section id="autoevaluacion" class="container py-5">
+        <h2>Autoevaluación</h2>
+        <p>Comprueba tus conocimientos</p>
+        <p>Selecciona la respuesta correcta para cada pregunta y haz clic en "Finalizar" para conocer tu puntaje.</p>
+        <form id="quiz-form">
+            <!-- Pregunta 1 -->
+            <div class="question">1. Selecciona el enunciado que sea verdadero.</div>
+            <div class="options">
+              <label><input type="radio" name="q1" value="incorrecto1"> Solo dos ecuaciones, ya que tienen funciones trigonométricas seno y coseno.</label>
+              <label><input type="radio" name="q1" value="correcto"> La primera ecuación no es de variables separables, las otras dos sí.</label>
+              <label><input type="radio" name="q1" value="incorrecto2"> Las tres ecuaciones pueden resolverse por separación de variables.</label>
+              <label><input type="radio" name="q1" value="incorrecto3"> Solo la primera ecuación diferencial es de variables separables.</label>
+            </div>
+      
+            <!-- Pregunta 2 -->
+            <div class="question">2. En el proceso de resolución del ejercicio por variables separables, se tienen las siguientes integrales a evaluar:</div>
+            <div class="options">
+              <label>
+                <input type="radio" name="q2" value="incorrecto1">
+                \( \int \frac{dy}{1+y^2} = \int \frac{dx}{x^2} - \int dx \)
+              </label>
+              <label>
+                <input type="radio" name="q2" value="correcto">
+                \( \int \frac{dy}{1 - y^2} = \int \frac{dx}{x^2} + \int dx \)
+              </label>
+              <label>
+                <input type="radio" name="q2" value="incorrecto2">
+                \( \int \frac{dy}{1 - y^2} = -\int \frac{dx}{x^2} - \int dx \)
+              </label>
+              <label>
+                <input type="radio" name="q2" value="incorrecto3">
+                <i>No es posible separar variables</i>
+              </label>
+            </div>
+            <!-- Pregunta 3 -->
+      <div class="question">3. La solución general del ejercicio \( i \) es:</div>
+      <div class="options">
+        <label>
+          <input type="radio" name="q3" value="incorrecto1">
+          <i>No es posible obtener su solución por este método</i>
+        </label>
+        <label>
+          <input type="radio" name="q3" value="incorrecto2">
+          \( \arctan(y) = -\frac{1}{x} - x + C \)
+        </label>
+        <label>
+          <input type="radio" name="q3" value="correcto">
+          \( \arctan(y) = \frac{1}{x} + x + C \)
+        </label>
+        <label>
+          <input type="radio" name="q3" value="incorrecto3">
+          \( -\arctan(y) = -\frac{1}{x} - x + C \)
+        </label>
+      </div>
+      <!-- Pregunta 4 -->
+      <div class="question">4. La separación de variables que se tiene en el ejercicio \( ii \) está en la opción:</div>
+      <div class="options">
+        <label>
+          <input type="radio" name="q4" value="incorrecto1">
+          \( \frac{x+2}{x}dx = -\frac{\cos y}{\sin y} dy \)
+        </label>
+        <label>
+          <input type="radio" name="q4" value="incorrecto2">
+          <i>No es posible separar sus variables</i>
+        </label>
+        <label>
+          <input type="radio" name="q4" value="correcto">
+          \( \frac{x}{x+2} dx = -\frac{\cos y}{\sin y} dy \)
+        </label>
+        <label>
+          <input type="radio" name="q4" value="incorrecto3">
+          \( \frac{x+2}{x} dx = -\frac{\cos y}{\sin y} dy \)
+        </label>
+      </div>
+      <!-- Pregunta 5 -->
+      <div class="question">5. La solución general del ejercicio \( ii \) es:</div>
+      <div class="options">
+        <label>
+          <input type="radio" name="q5" value="incorrecto1">
+          \( x+2\ln x - \ln (\cos y) = C \)
+        </label>
+        <label>
+          <input type="radio" name="q5" value="incorrecto2">
+          \( x+2\ln x - \ln (\sin y) = C \)
+        </label>
+        <label>
+          <input type="radio" name="q5" value="correcto">
+          \( x+2\ln x + \ln (\sin y) = C \)
+        </label>
+        <label>
+          <input type="radio" name="q5" value="incorrecto3">
+          \( 1+2\ln x = -\ln (\cos y) + C \)
+        </label>
+      </div>
+            <!-- Botón para finalizar -->
+            <button type="button" class="submit-btn" onclick="calcularResultados()">Finalizar</button>
+            </form>
+            <!-- Resultado -->
+            <div id="result" class="result"></div>
+    </section>
+
+    <!-- Sección Fuentes -->
+    <section id="fuentes" class="container py-5">
+        <h2 class="references-title">Referencias</h2>
+        <div class="references-list">
+          <p>Carmona, J.I., y Fiallo, E. (2011). <em>Ecuaciones diferenciales</em>. Editorial Pearson, México.</p>
+          <p>Zill, D. G. (2018). <em>Ecuaciones diferenciales con problemas de valores en la frontera</em>. Cengage Learning.</p>
+        </div>
+    </section>
+  </main>
+
+  <script>
+    function calcularResultados() {
+      let puntaje = 0;
+      let totalPreguntas = 5;
+
+      // Respuestas correctas
+      const respuestas = {
+        q1: "correcto",
+        q2: "correcto"
+      };
+
+      // Verificar selección del usuario
+      Object.keys(respuestas).forEach(pregunta => {
+        const seleccion = document.querySelector(`input[name="${pregunta}"]:checked`);
+        if (seleccion && seleccion.value === respuestas[pregunta]) {
+          puntaje++;
         }
+      });
 
-        function moveCarousel(direction) {
-            clearInterval(autoScroll); 
+      // Mostrar resultado
+      const resultadoDiv = document.getElementById("result");
+      resultadoDiv.style.display = "block";
+      resultadoDiv.innerHTML = `Tu puntaje es ${puntaje} de ${totalPreguntas}.`;
 
-            currentIndex += direction;
-            carousel.style.transition = 'transform 0.4s ease'; 
-            carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+      if (puntaje === totalPreguntas) {
+        resultadoDiv.innerHTML += " ¡Felicidades! 🎉 Has respondido todo correctamente.";
+      } else {
+        resultadoDiv.innerHTML += " Repasa el material y vuelve a intentarlo. Puedes hacerlo mejor.";
+      }
+    }
+  </script>
+  <!-- SCRIPTS Bootstrap (jQuery y Popper para el colapsado) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+          integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+          crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-Fy6S2B02yJf8fPhQ3eO1sv6y8LuZ1ln3f9i6hl6zRAc5+Gx9YZO/TN+Kxm0i0D3l"
+          crossorigin="anonymous"></script>
 
-            // Bucle continuo del carrusel
-            carousel.addEventListener('transitionend', () => {
-                if (currentIndex === totalItems - 1) {
-                    carousel.style.transition = 'none';
-                    currentIndex = 1;
-                    carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
-                } else if (currentIndex === 0) {
-                    carousel.style.transition = 'none';
-                    currentIndex = totalItems - 2;
-                    carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
-                }
-                startAutoScroll();
-            }, { once: true });
-        }
-
-        // Desp automático
-        startAutoScroll();
-    </script>
 </body>
 </html>

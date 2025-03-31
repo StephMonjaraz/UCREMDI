@@ -8,12 +8,13 @@
   <style>
     /* Contenedor principal del contenido */
     .content-area {
-      max-width: 850px;
-      margin: 30px auto; /* Espaciado superior para mejor apariencia */
+      max-width: 1500px;
+      height: 1000px;
+      margin: 30px; /* Espaciado superior para mejor apariencia */
       padding: 20px;
       background: #ffffff; /* Fondo blanco para que resalte */
       border-radius: 8px;
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);  /*Sombra sutil */
     }
 
     /* Estilo de los títulos */
@@ -21,17 +22,18 @@
       color: #c00;
       padding-left: 8px;
       margin-bottom: 20px;
+      text-align: center;
     }
 
     .content-area h3 {
-      color: #c00;
+      color: black;
       margin-top: 30px; /* Espaciado adicional entre secciones */
       margin-bottom: 15px;
       padding: 10px;
-      background: #f8f8f8; /* Fondo suave */
-      border-radius: 6px;
+      /* background: #f8f8f8; Fondo suave */
+      /*border-radius: 6px;*/
       text-align: center;
-      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+      /*box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);  Sombra ligera */
     }
 
     /* Estilo del texto */
@@ -80,6 +82,33 @@
       line-height: 1;
       padding: 0 4px;
     }
+    
+    /* Estilos para la tablet y el video embebido */
+    .tablet-container {
+      position: relative;    
+      width: 1300px;          
+      margin: 30px auto;    
+    }
+
+    .tablet-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;          /* La imagen ocupa todo el ancho del contenedor */
+      display: block;
+      pointer-events: none; 
+      z-index: 2;
+    }
+
+    .tablet-screen {
+      position: absolute;  
+      top: 130px;            
+      left: 320px;          
+      width: 800px;         
+      height: 450px;        
+      border: none;   
+      z-index: 1; 
+    }
   </style>
 </head>
 <body>
@@ -103,14 +132,13 @@
 
   <!-- Contenido principal -->
   <main class="content-area">
+    <h2>Ecuaciones diferenciales de variables separables</h2>
+    <h3>Método utilizado para resolver ecuaciones en las cuales las variables pueden separarse algebraicamente</h3>
 
-    <h3>Forma de este tipo de ecuaciones diferenciales</h3>
-
+    <!-- Bloque de contenido comentado -->
+    <!--<h3>Forma de este tipo de ecuaciones diferenciales</h3>
     <p>Este método se utiliza para ecuaciones diferenciales de primer orden, por lo que tendremos una primera derivada únicamente, en la cual podemos identificar un solo cociente o producto de dos funciones igualadas a una derivada.</p>
-
     <p>Se dice que una ecuación diferencial de variables separables es aquella que tiene la forma tal que podría reescribirse separando las variables “x” y “y” mediante el símbolo de igualdad, podríamos tener lo siguiente:</p>
-
-    <!-- Ecuación en formato HTML -->
     <div class="formula">
       x e<sup>x+y</sup> 
       <span class="frac">
@@ -119,19 +147,27 @@
       </span>
       + y e<sup>x+y</sup> = 0
     </div>
-
     <p>Se observa que la primera derivada en el primer caso está igualada a un producto de funciones en donde cada una de ellas podemos identificar por depender de una sola variable, en este caso una función f que solo depende de “x”, multiplicada por una función g que depende solo de la variable “y”. En el segundo caso, la primera derivada está asociada con un cociente de funciones, en donde de la misma forma en el numerador hay una función f que depende solo de la variable “x” y en el denominador hay una función g que depende de la variable “y”.</p>
-    
     <h3>Pasos a seguir para resolver este tipo de ecuaciones</h3>
-
     <ol>
       <li>Observar si la ecuación diferencial tiene un producto o cociente de funciones en las que cada una dependa de una sola variable.</li>
       <li>Utilizar algún método algebraico válido que permita agrupar y separar las funciones con su respectivo diferencial.</li>
       <li>Integrar cada lado de la ecuación, incorporando una constante C arbitraria por tratarse de integrales indefinidas.</li>
-    </ol>
+    </ol>-->
+
+    <!-- Nuevo bloque: imagen de las manos sosteniendo la tablet con el video embebido -->
+    <div class="tablet-container">
+      <!-- Imagen de las manos con la tablet -->
+      <img src="../assets/img/manos.png" alt="Manos sosteniendo la tablet" class="tablet-image">
+      
+      <!-- Video embebido (por ejemplo, desde YouTube) -->
+      <iframe class="tablet-screen"
+              src="https://www.youtube.com/embed/8VGgHcOO8TM?si=aDB6h_kL7QfySjkA" 
+              allowfullscreen>
+      </iframe>
+    </div>
 
   </main>
 
 </body>
 </html>
-
