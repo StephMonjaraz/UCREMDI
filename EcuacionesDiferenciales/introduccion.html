@@ -319,41 +319,51 @@
     <a href="#" class="search-button">Búsqueda</a>
   </div>
 
-  <!-- NAVBAR de Bootstrap -->
-  <nav class="navbar navbar-expand-md navbar-light bg-light">
-    <!-- Botón para el menú  -->
-    <button class="navbar-toggler" type="button"
-            data-toggle="collapse" data-target="#collapsibleNavbar"
-            aria-controls="collapsibleNavbar"
-            aria-expanded="false" aria-label="Toggle navigation">
-      <!-- pendiente agregar la clase 'navbar-toggler-icon' y un icono. -->
-      <span class="navbar-toggler-icon"></span>
-    </button>
+  
+<!-- Barra de Navegación Moderna con íconos (ajustada) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  .icon-bar {
+    background-color: white;
+    text-align: center;
+    padding: 10px 0;
+    border-bottom: 2px solid #c00;
+  }
 
-    <!-- Contenedor -->
-    <div class="collapse navbar-collapse" id="collapsibleNavbar">
-      <ul class="navbar-nav ml-auto">
-        <!-- Secciones, con esto hacemos lo del paralaje -->
-        <li class="nav-item">
-          <a class="nav-link" href="#introduccion">Introducción</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#contenido">Contenido</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#actividades">Actividades</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#autoevaluacion">Autoevaluación</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#fuentes">Fuentes</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+  .icon-bar a {
+    color: #c00;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-size: 1rem;
+    display: inline-block;
+    transition: color 0.3s ease;
+  }
 
-  <!-- CONTENIDO PRINCIPAL -->
+  .icon-bar a i {
+    margin-right: 6px;
+    font-size: 0.9rem;
+  }
+
+  .icon-bar a:hover {
+    color: #900;
+  }
+
+  .icon-bar a.active {
+    text-decoration: underline;
+    font-weight: bold;
+    color: #900;
+  }
+</style>
+
+<div class="icon-bar">
+  <a class="active" href="#introduccion"><i class="fa fa-home"></i> Introducción</a>
+  <a href="#contenido"><i class="fa fa-book-open"></i> Contenido</a>
+  <a href="#actividades"><i class="fa fa-pencil-alt"></i> Actividades</a>
+  <a href="#autoevaluacion"><i class="fa fa-check-circle"></i> Autoevaluación</a>
+  <a href="#fuentes"><i class="fa fa-info-circle"></i> Fuentes</a>
+</div>
+
+<!-- CONTENIDO PRINCIPAL -->
   <main class="content-area">
     <!-- Sección Introducción -->
     <section id="introduccion" class="container py-5">
